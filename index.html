@@ -290,7 +290,7 @@ body.sheet-open #dock{opacity:0;pointer-events:none}
 /* ================= SETTINGS =================
    Fill these in once (see SETUP.md). With url and key empty the page
    still works, but everything is saved on the phone only. */
-var CFG={https://aculnnwdnprwtxdsiips.supabase.co:'',sb_publishable_tyFCT7ypDeD4KfOY-OF_6A_qoKAH0mC:'',trip:'theory_of_khopdis',fn:'morocco-assistant'};
+var CFG={url:'https://aculnnwdnprwtxdsiips.supabase.co',key:'sb_publishable_tyFCT7ypDeD4KfOY-OF_6A_qoKAH0mC',trip:'theory_of_khopdis',fn:'morocco-assistant'};
 if(window.MOR_CFG){for(var ck in window.MOR_CFG){CFG[ck]=window.MOR_CFG[ck];}}
 
 /* ================= helpers ================= */
@@ -342,10 +342,16 @@ function kv(k){var e=KV[k];return e?e.v:undefined;}
 function kb(k){return !!kv(k);}
 function kby(k){var e=KV[k];return e&&e.by&&PEOPLE[e.by]?PEOPLE[e.by].name:'';}
 
+function authHeaders(extra){
+  var hd={'Content-Type':'application/json',apikey:CFG.key};
+  if(/^eyJ/.test(CFG.key))hd.Authorization='Bearer '+CFG.key;
+  if(extra)for(var k in extra)hd[k]=extra[k];
+  return hd;
+}
 function rpc(name,body){
   return fetch(CFG.url+'/rest/v1/rpc/'+name,{
     method:'POST',
-    headers:{'Content-Type':'application/json',apikey:CFG.key,Authorization:'Bearer '+CFG.key},
+    headers:authHeaders(),
     body:JSON.stringify(body)
   }).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();});
 }
@@ -788,7 +794,7 @@ var CURSTART={hg:{code:'GBP',val:100},vr:{code:'EUR',val:100},a:{code:'INR',val:
 var SYM={GBP:'\u00A3',EUR:'\u20AC',INR:'\u20B9'};
 var DAY_AR=['\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621','\u0627\u0644\u062E\u0645\u064A\u0633','\u0627\u0644\u062C\u0645\u0639\u0629','\u0627\u0644\u0633\u0628\u062A','\u0627\u0644\u0623\u062D\u062F','\u0627\u0644\u0627\u062B\u0646\u064A\u0646'];
 var SEC_AR={plan:'\u0627\u0644\u0628\u0631\u0646\u0627\u0645\u062C',places:'\u0627\u0644\u0623\u0645\u0627\u0643\u0646',team:'\u0627\u0644\u0641\u0631\u064A\u0642',stay:'\u0627\u0644\u0625\u0642\u0627\u0645\u0629',money:'\u0627\u0644\u0645\u0627\u0644',pack:'\u0627\u0644\u062D\u0642\u064A\u0628\u0629',ask:'\u0627\u0644\u0645\u0633\u0627\u0639\u062F'};
-var SEC_EN={plan:'Plan',places:'Places',team:'Team',stay:'Stay',money:'Money',pack:'Pack',ask:'Ask Claude'};
+var SEC_EN={plan:'Plan',places:'Places',team:'Team',stay:'Stay',money:'Money',pack:'Pack',ask:'Assistant'};
 
 var PINS={
   w1:'London Stansted Airport',w2:'Agadir Al Massira Airport',t1:"Atlantic Palm Beach Apart'Hotel Agadir",t3:'Agadir Al Massira Airport',
@@ -1218,7 +1224,7 @@ function sendChat(text){
   while(msgs.length&&msgs[0].role!=='user')msgs.shift();
   fetch(CFG.url+'/functions/v1/'+CFG.fn,{
     method:'POST',
-    headers:{'Content-Type':'application/json',apikey:CFG.key,Authorization:'Bearer '+CFG.key},
+    headers:authHeaders({'x-trip':CFG.trip}),
     body:JSON.stringify({messages:msgs,person:PEOPLE[me()].name,context:buildContext()})
   }).then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});}).then(function(x){
     if(x.ok&&x.j&&x.j.text)finish(x.j.text,false);
