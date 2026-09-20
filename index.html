@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2340C8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="color-scheme" content="light">
+<title>Morocco 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F6F8FF;--panel:#FFFFFF;--ink:#12224F;--ink2:#48547F;--ink3:#7F8AB0;--line:#E0E6F8;
+  --blue:#2340C8;--blue2:#4A63E6;--soft:#E9EDFF;--red:#C8262F;--redsoft:#FDECEC;
+  --d:'Reem Kufi','Segoe UI',system-ui,sans-serif;
+  --b:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg);scroll-padding-top:70px}
+body{margin:0;font-family:var(--b);font-size:16px;line-height:1.45;color:var(--ink);min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+  background-color:var(--bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cg fill='none' stroke='%232340C8' stroke-opacity='.055' stroke-width='1.2'%3E%3Crect x='16' y='16' width='40' height='40'/%3E%3Crect x='16' y='16' width='40' height='40' transform='rotate(45 36 36)'/%3E%3C/g%3E%3C/svg%3E")}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3,p{margin:0}
+a{color:var(--blue)}
+.ar{font-family:var(--d);direction:rtl;unicode-bidi:isolate}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* top bar */
+.top{display:flex;align-items:center;gap:10px;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px 10px}
+.brand{flex:1;min-width:0;line-height:1.1}
+.brand .ar{display:block;font-size:32px;line-height:1.35;font-weight:600;color:var(--blue);letter-spacing:.02em;text-align:left}
+.brand span{display:block;margin-top:2px;font-size:12.5px;color:var(--red);font-weight:600;letter-spacing:.04em}
+.sync{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink2);background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.sync i{width:8px;height:8px;border-radius:50%;background:var(--ink3)}
+.sync.on i{background:var(--blue)}.sync.bad i{background:var(--red)}
+#whoBtn{width:38px;height:38px;border-radius:50%;border:2px solid var(--red);background:#fff;color:var(--red);font-family:var(--d);font-weight:700;font-size:18px;display:grid;place-items:center;padding:0}
+.band{height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M12 0L24 6L12 12L0 6Z' fill='%232340C8'/%3E%3Cpath d='M12 3L18 6L12 9L6 6Z' fill='%23C8262F'/%3E%3C/svg%3E") repeat-x left center;opacity:.9}
+
+/* layout */
+main{padding:14px 78px 100px 14px;max-width:820px;margin:0 auto}
+.tab{display:none}.tab.active{display:block}
+.sech{display:flex;align-items:baseline;gap:10px;margin:2px 2px 12px}
+.sech .ar{font-size:30px;font-weight:600;color:var(--blue)}
+.sech h1{font-size:14px;font-weight:600;color:var(--red);letter-spacing:.04em}
+.sub2{font-family:var(--d);font-size:19px;font-weight:600;margin:18px 2px 8px;color:var(--ink)}
+.sub2 small{font-family:var(--b);font-size:12px;font-weight:500;color:var(--ink3);margin-left:6px}
+.note{color:var(--ink2);font-size:14px;margin:0 0 8px}
+.note.pad{margin:0 2px 10px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.panel h3{font-family:var(--d);font-size:18px;font-weight:600;margin-bottom:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.two2{display:grid;grid-template-columns:1fr;gap:0}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.lb{display:block;font-size:12px;color:var(--ink3);margin-bottom:2px}
+
+/* hello, route, pills */
+.hello{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:0 2px 10px}
+.hi{font-size:17px}.hi .ar{color:var(--red);font-size:22px;margin-right:4px}.hi b{font-weight:700}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12px;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.route{display:flex;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 10px;margin-bottom:12px}
+.rn{flex:0 0 auto;text-align:center;padding:0 2px}
+.rn::before{content:"";display:block;width:11px;height:11px;margin:0 auto 5px;background:var(--red);transform:rotate(45deg);border-radius:2px}
+.rn b{display:block;font-size:17px;font-weight:600;color:var(--blue);line-height:1.1}
+.rn span{display:block;font-size:12px;color:var(--ink)}
+.rn small{display:block;font-size:11px;color:var(--ink3)}
+.rl{flex:1 1 6px;min-width:4px;height:0;border-top:2px dotted var(--red);margin:5px 2px 0;opacity:.6}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;margin:0 -14px;padding-left:14px;padding-right:14px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.pill{flex:0 0 auto;min-width:66px;text-align:center;background:#fff;border:1.5px solid var(--line);border-radius:999px 999px 12px 12px;padding:8px 8px 6px;color:var(--ink)}
+.pill b{display:block;font-size:15px;font-weight:600;line-height:1.2;color:var(--blue)}
+.pill span{display:block;font-size:12px;font-weight:600}
+.pill small{display:block;font-size:10.5px;color:var(--ink3)}
+.pill.on{background:var(--blue);border-color:var(--blue);box-shadow:0 6px 16px rgba(35,64,200,.25)}
+.pill.on b,.pill.on span{color:#fff}.pill.on small{color:rgba(255,255,255,.8)}
+.dayhead{margin:4px 2px 10px}
+.dayhead .ar{display:block;font-size:15px;color:var(--red);font-weight:600;text-align:left}
+.dayhead h2{font-family:var(--d);font-size:26px;font-weight:600;line-height:1.15}
+.dayhead p{color:var(--ink2);font-size:14px;margin-top:2px}
+.facts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.facts span{font-size:12px;color:var(--ink2);background:var(--soft);border-radius:8px;padding:2px 8px}
+.alert,.warn{display:flex;gap:8px;align-items:flex-start;width:100%;text-align:left;background:var(--redsoft);border:1px solid #F4C6C8;color:#7A1A1F;border-radius:12px;padding:8px 10px;margin:0 0 10px;font-size:13.5px}
+.alert b,.warn b{flex:0 0 20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:12px;display:grid;place-items:center}
+.alert span{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.alert.open span{-webkit-line-clamp:unset;display:block}
+.bar2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0 12px}
+.cnt{margin-left:auto;font-size:12px;color:var(--ink3)}
+.btn{display:inline-block;background:var(--blue);color:#fff;border:0;border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;text-decoration:none;text-align:center}
+.btn.red{background:var(--red)}.btn.alt{background:var(--soft);color:var(--blue)}
+.btn:disabled{opacity:.5}
+
+/* stops */
+.stop{display:grid;grid-template-columns:32px 1fr 40px;gap:0 8px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--c,var(--blue));border-radius:14px;padding:10px 8px 10px 8px;margin-bottom:8px}
+.k-travel{--c:#2340C8}.k-drive{--c:#7A8BE0}.k-food{--c:#C8262F}.k-adv{--c:#E5484D}.k-sight{--c:#3B5BDB}.k-stay{--c:#5F6DA8}.k-chill{--c:#E88B90}
+.chk{width:26px;height:26px;margin-top:6px;border-radius:50%;border:2px solid #C9D2F2;background:#fff;padding:0;display:grid;place-items:center;color:transparent;font-size:14px;line-height:1}
+.chk::after{content:"\2713"}
+.stop.done .chk{background:var(--blue);border-color:var(--blue);color:#fff}
+.mid{min-width:0;cursor:pointer}
+.l1{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:1px}
+.tmw{position:relative;display:inline-block;font-family:var(--d);font-weight:600;font-size:16px;line-height:24px;color:var(--blue);background:var(--soft);border-radius:8px;padding:0 8px;min-width:56px;text-align:center}
+.tmw input{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;border:0;padding:0;margin:0;font-size:16px;cursor:pointer}
+.ico{font-size:15px}
+.for{font-size:10.5px;font-weight:700;color:var(--blue);background:var(--soft);border-radius:6px;padding:1px 6px}
+.carepill{font-size:10.5px;font-weight:700;color:var(--red);background:var(--redsoft);border-radius:6px;padding:1px 6px}
+.optpill{font-size:10.5px;font-weight:600;color:var(--ink3);background:#EEF0F8;border-radius:6px;padding:1px 6px}
+.stop h3{font-size:16px;font-weight:600;line-height:1.3}
+.s1{font-size:13px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pin{width:38px;height:38px;border-radius:12px;background:var(--redsoft);display:grid;place-items:center;text-decoration:none;font-size:18px;align-self:start}
+.more{display:none;grid-column:1/-1;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:14.5px}
+.stop.open .more{display:block}
+.stop.open .s1{display:none}
+.more p+p,.more p+.care{margin-top:8px}
+.sfull{color:var(--ink2)}
+.care{background:var(--redsoft);border-left:3px solid var(--red);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:14px;color:#6E1A1F}
+.links{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.lnk{display:inline-block;font-size:13px;font-weight:600;text-decoration:none;color:var(--blue);background:var(--soft);border-radius:999px;padding:5px 12px}
+.lnk.red{color:var(--red);background:var(--redsoft)}
+.meta{font-size:12px;color:var(--ink3);margin-top:8px}
+.acts{margin-top:8px}
+.ghost{background:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--ink2)}
+.stop.done h3{text-decoration:line-through;text-decoration-color:var(--ink3);color:var(--ink3)}
+.stop.skip{opacity:.5}.stop.skip h3{text-decoration:line-through}
+
+/* accordions */
+.acc{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden}
+.acc summary{list-style:none;cursor:pointer;padding:13px 14px;font-family:var(--d);font-size:17px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-family:var(--b);font-size:20px;color:var(--red);flex:0 0 auto}
+.acc[open] summary::after{content:"\2212"}
+.acc summary small{font-family:var(--b);font-size:12px;font-weight:400;color:var(--ink3);margin-left:auto;margin-right:6px;text-align:right}
+.accin{padding:0 14px 14px}
+.when2{font-weight:600;color:var(--blue);font-size:14px;margin-bottom:6px}
+.kv{display:grid;grid-template-columns:88px 1fr;gap:4px 10px;font-size:14px;margin:6px 0 0}
+.kv dt{color:var(--ink3);font-size:13px}.kv dd{margin:0}
+.clinic{padding:8px 0;border-top:1px dashed var(--line)}
+.who{font-family:var(--d);font-size:18px;font-weight:600;margin:12px 2px 6px}
+
+/* checks */
+.check{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line);cursor:pointer}
+.check:first-child{border-top:0}
+.box{flex:0 0 22px;width:22px;height:22px;margin-top:1px;border-radius:7px;border:2px solid #C9D2F2;display:grid;place-items:center;font-size:13px;color:transparent}
+.box::after{content:"\2713"}
+.check.on .box{background:var(--blue);border-color:var(--blue);color:#fff}
+.ct{flex:1;font-size:15px}.ct small{display:block;color:var(--ink3);font-size:12.5px}
+.check.on .ct{color:var(--ink3);text-decoration:line-through}.check.on .ct small{text-decoration:none}
+
+/* flights, timeline */
+.leg{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:8px}
+.code{font-family:var(--d);font-size:16px;color:var(--blue);flex:0 0 72px}
+.lr{flex:1;min-width:0}
+.rt{font-weight:600;font-size:15px}.tm2{font-size:13px;color:var(--ink2)}.nt{font-size:12px;color:var(--ink3);margin-top:2px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:flex;gap:10px;padding:5px 0;font-size:13.5px;border-top:1px dashed var(--line)}
+.tl li:first-child{border-top:0}
+.tl b{font-family:var(--d);color:var(--red);min-width:46px}
+
+/* places */
+.chiprow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.chiprow.q{margin:8px -14px 8px 0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:14px}
+.chiprow.q .cchip{flex:0 0 auto;white-space:nowrap}
+.cchip{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--ink2)}
+.cchip.on{background:var(--red);border-color:var(--red);color:#fff}
+.srow{display:flex;gap:8px;margin:8px 0}
+.srow .tx{flex:1;min-width:0}
+.mapf{width:100%;height:240px;border:1px solid var(--line);border-radius:14px;margin-top:8px;background:#fff}
+.place{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:8px}
+.place.idea{background:#FBFCFF;border-style:dashed}
+.pl1{display:flex;align-items:center;gap:8px}.pl1 b{font-size:16px;font-weight:600}
+.cty{font-size:11px;font-weight:700;color:var(--red);background:var(--redsoft);border-radius:6px;padding:1px 7px}
+.pt{font-size:13.5px;color:var(--ink2);margin-top:2px}
+.pact{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.mini{display:inline-block;background:var(--soft);color:var(--blue);border:0;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;text-decoration:none}
+.mini.red{background:var(--redsoft);color:var(--red)}.mini.on{background:var(--blue);color:#fff}
+.mini:disabled{opacity:.5}
+
+/* form controls */
+.tx{width:100%;font-size:15px;background:#F1F4FF;border:1px solid transparent;border-radius:10px;padding:9px 11px;color:var(--ink);margin:4px 0}
+.tx:focus{outline:0;border-color:var(--blue);background:#fff}
+textarea.tx{min-height:96px;resize:vertical}
+.two .tx,.three .tx{margin:0}
+.cur{display:grid;grid-template-columns:76px 1fr;gap:8px 10px;align-items:center}
+.cur label{font-family:var(--d);font-weight:600;font-size:16px}
+.cur label small{display:block;font-family:var(--b);font-weight:400;font-size:11.5px;color:var(--ink3)}
+table.q,table.legs{width:100%;border-collapse:collapse;font-size:14px}
+table.q th{text-align:right;font-size:12px;color:var(--ink3);padding:0 0 6px 6px}
+table.q th:first-child{text-align:left}
+table.q td{padding:7px 0 7px 6px;border-top:1px dashed var(--line);text-align:right}
+table.q td:first-child{text-align:left;font-weight:600}
+table.legs td{padding:8px 4px 8px 0;border-top:1px dashed var(--line);vertical-align:top}
+table.legs td small{display:block;color:var(--ink3);font-size:12px}
+.ph{display:flex;gap:10px;align-items:center;padding:8px 0;border-top:1px dashed var(--line)}
+.phx{flex:1;min-width:0}
+.phx b{font-family:var(--d);font-size:18px;color:var(--blue);display:block}
+.phx span{font-size:14px;color:var(--ink2);display:block}
+.phx small{font-size:12.5px;color:var(--ink3)}
+.sos{display:flex;gap:8px;flex-wrap:wrap}
+.sos a{flex:1 1 90px;text-align:center;text-decoration:none;background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:14px;padding:10px 6px;font-size:13px}
+.sos a b{display:block;font-family:var(--d);font-size:24px;color:var(--red)}
+
+/* assistant */
+.chat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;height:min(40vh,340px);overflow:hidden;display:flex}
+#chatlog{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:2px}
+.bub{max-width:88%;padding:9px 12px;border-radius:16px;font-size:14.5px}
+.bub p{margin:0}
+.bub.u{align-self:flex-end;background:var(--blue);color:#fff;border-bottom-right-radius:4px}
+.bub.a{align-self:flex-start;background:#F1F4FF;border-bottom-left-radius:4px;border-left:3px solid var(--red)}
+.bub.err{background:var(--redsoft)}
+.bub .mini{margin:8px 6px 0 0}
+.dots::after{content:"...";animation:d 1s steps(4) infinite}
+@keyframes d{0%{content:""}33%{content:"."}66%{content:".."}100%{content:"..."}}
+
+/* dock on the right */
+#dock{position:fixed;right:10px;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;gap:4px;padding:8px 6px;border-radius:28px;
+  background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);
+  border:1px solid rgba(35,64,200,.14);box-shadow:0 10px 30px rgba(35,64,200,.18);max-height:calc(100vh - 24px);overflow-y:auto;scrollbar-width:none}
+#dock::-webkit-scrollbar{display:none}
+#dock button{width:48px;height:52px;border:0;background:transparent;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:10px;font-weight:600;color:var(--ink2);padding:0}
+#dock button .ic{font-size:21px;line-height:1.1}
+#dock button[aria-selected="true"]{background:var(--blue);color:#fff;box-shadow:0 6px 14px rgba(35,64,200,.3)}
+body.sheet-open #dock{opacity:0;pointer-events:none}
+
+/* sheet, overlay, toast */
+#sheetwrap{position:fixed;left:0;right:0;top:0;bottom:0;z-index:50;display:none}
+#sheetwrap.show{display:block}
+.scrim{position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(18,34,79,.35)}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:24px 24px 0 0;padding:10px 16px calc(16px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;max-height:88vh;overflow:auto;box-shadow:0 -10px 40px rgba(18,34,79,.25)}
+.sheet h3{font-family:var(--d);font-size:22px;font-weight:600;margin:4px 0 8px}
+.grab{width:44px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 6px}
+#who{position:fixed;left:0;right:0;top:0;bottom:0;z-index:60;display:none;overflow:auto;background:var(--blue);color:#fff;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.14' stroke-width='1'%3E%3Crect x='12' y='12' width='32' height='32'/%3E%3Crect x='12' y='12' width='32' height='32' transform='rotate(45 28 28)'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(170deg,#2E4BD8,#1B2E9E)}
+#who.show{display:block}
+.who-in{max-width:440px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 34px) 20px 40px}
+.who-in .big{display:block;font-size:64px;line-height:1;font-weight:600}
+.who-in h2{font-family:var(--d);font-size:24px;font-weight:500;margin-top:4px;opacity:.95}
+.who-q{margin:14px 0 18px;font-size:18px;opacity:.9}
+.who-b{display:block;width:100%;text-align:left;margin-bottom:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:12px 16px;color:#fff}
+.who-b b{display:block;font-family:var(--d);font-size:22px;font-weight:600}
+.who-b span{display:block;font-size:13.5px;opacity:.85}
+.who-x{background:none;border:0;color:#fff;text-decoration:underline;font-size:14px;padding:6px 0}
+.who-n{margin-top:16px;font-size:12.5px;opacity:.75}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:#fff;font-size:13.5px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:all .25s;z-index:80;max-width:80vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media (min-width:760px){main{padding-right:96px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><b class="ar">&#1575;&#1604;&#1605;&#1594;&#1585;&#1576;</b><span>Morocco 2026</span></div>
+  <div class="sync off" id="sync"><i></i><span>Saved on this phone</span></div>
+  <button id="whoBtn" data-act="who" aria-label="Who is using this">?</button>
+</header>
+<div class="band" aria-hidden="true"></div>
+
+<main>
+  <section class="tab active" id="tab-plan"></section>
+  <section class="tab" id="tab-places"></section>
+  <section class="tab" id="tab-team"></section>
+  <section class="tab" id="tab-stay"></section>
+  <section class="tab" id="tab-money"></section>
+  <section class="tab" id="tab-pack"></section>
+  <section class="tab" id="tab-ask"></section>
+</main>
+
+<nav id="dock" role="tablist" aria-label="Sections">
+  <button role="tab" data-act="tab" data-tab="plan" aria-selected="true"><span class="ic">&#128197;</span>Plan</button>
+  <button role="tab" data-act="tab" data-tab="places" aria-selected="false"><span class="ic">&#128205;</span>Places</button>
+  <button role="tab" data-act="tab" data-tab="team" aria-selected="false"><span class="ic">&#9992;&#65039;</span>Team</button>
+  <button role="tab" data-act="tab" data-tab="stay" aria-selected="false"><span class="ic">&#127968;</span>Stay</button>
+  <button role="tab" data-act="tab" data-tab="money" aria-selected="false"><span class="ic">&#128177;</span>Money</button>
+  <button role="tab" data-act="tab" data-tab="pack" aria-selected="false"><span class="ic">&#127890;</span>Pack</button>
+  <button role="tab" data-act="tab" data-tab="ask" aria-selected="false"><span class="ic">&#10024;</span>Ask</button>
+</nav>
+
+<div id="sheetwrap"></div>
+<div id="who" role="dialog" aria-modal="true"></div>
+<div id="toast" role="status"></div>
+
+<script>
+(function(){
+'use strict';
+
+/* ================= SETTINGS =================
+   Fill these in once (see SETUP.md). With url and key empty the page
+   still works, but everything is saved on the phone only. */
+var CFG={url:'',key:'',trip:'mor26-k7q2x9',fn:'morocco-assistant'};
+if(window.MOR_CFG){for(var ck in window.MOR_CFG){CFG[ck]=window.MOR_CFG[ck];}}
+
+/* ================= helpers ================= */
+var LS={
+  get:function(k,d){try{var v=localStorage.getItem('mor26:'+k);return v===null?d:JSON.parse(v);}catch(e){return d;}},
+  set:function(k,v){try{localStorage.setItem('mor26:'+k,JSON.stringify(v));}catch(e){}}
+};
+function mapUrl(q){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);}
+function M(label,q){return [label,mapUrl(q)];}
+function T(label,num){return [label,'tel:'+num];}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function copy(o){return JSON.parse(JSON.stringify(o));}
+function mins(t){if(!t)return 9999;var p=String(t).split(':');return (+p[0])*60+(+p[1]);}
+
+var TAGS={
+  travel:['Flight','\u2708\uFE0F','travel'],drive:['Drive','\uD83D\uDE97','drive'],food:['Food','\uD83C\uDF7D\uFE0F','food'],
+  adv:['Adventure','\uD83E\uDDD7','adv'],sight:['Sights','\uD83D\uDD4C','sight'],stay:['Stay','\uD83D\uDECF\uFE0F','stay'],
+  chill:['Slow','\u2615','chill'],car:['Car','\uD83D\uDE97','drive']
+};
+
+var toastT=null;
+function toast(msg){
+  var el=$('#toast');if(!el)return;
+  el.textContent=msg;el.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove('show');},2600);
+}
+
+/* ================= shared store (Supabase, optional) =================
+   Every change is one key. Keys: done:ID skip:ID time:ID stop:ID place:ID
+   vote:ID:PERSON conf:N carf:FIELD carT:KEY pack:PERSON:G:I note:PERSON */
+var KV=LS.get('kv',{});
+var Q=LS.get('q',[]);
+var cursor=LS.get('cursor',null);
+var flushing=false,pulling=false,lastPull=0;
+var online=null;
+var typing=false,pendingRender=false;
+var S={
+  me:LS.get('me',null),day:0,tab:'plan',open:{},last:null,
+  rates:LS.get('rates',null),chat:LS.get('chat',[]),busy:false,
+  city:LS.get('city','Marrakesh'),cat:'',pq:'',embed:'',sheet:null
+};
+
+function synced(){return !!(CFG.url&&CFG.key);}
+function saveLocal(){LS.set('kv',KV);LS.set('q',Q);LS.set('cursor',cursor);}
+function kv(k){var e=KV[k];return e?e.v:undefined;}
+function kb(k){return !!kv(k);}
+function kby(k){var e=KV[k];return e&&e.by&&PEOPLE[e.by]?PEOPLE[e.by].name:'';}
+
+function rpc(name,body){
+  return fetch(CFG.url+'/rest/v1/rpc/'+name,{
+    method:'POST',
+    headers:{'Content-Type':'application/json',apikey:CFG.key,Authorization:'Bearer '+CFG.key},
+    body:JSON.stringify(body)
+  }).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();});
+}
+
+function setStatus(ok){
+  online=ok;
+  var el=$('#sync');if(!el)return;
+  if(!synced()){el.className='sync off';el.querySelector('span').textContent='Saved on this phone';return;}
+  el.className='sync '+(ok?'on':'bad');
+  el.querySelector('span').textContent=ok?(Q.length?'Saving':'Live'):'Offline, will retry';
+}
+
+function kvSet(k,v){
+  var at=new Date().toISOString();
+  KV[k]={v:v,by:S.me,at:at,dirty:1};
+  Q.push({k:k,v:v,by:S.me});
+  saveLocal();
+  flush();
+  setStatus(online);
+}
+
+function flush(){
+  if(!synced()||flushing||!Q.length)return;
+  flushing=true;
+  var item=Q[0];
+  rpc('morocco_set',{p_trip:CFG.trip,p_k:item.k,p_v:item.v,p_by:item.by||''}).then(function(at){
+    var e=KV[item.k];
+    if(e&&e.dirty){
+      var later=false;
+      for(var i=1;i<Q.length;i++){if(Q[i].k===item.k){later=true;break;}}
+      if(!later){e.dirty=0;if(at)e.at=at;}
+    }
+    Q.shift();saveLocal();flushing=false;setStatus(true);flush();
+  }).catch(function(){flushing=false;setStatus(false);});
+}
+
+function pull(){
+  if(!synced()||pulling)return;
+  pulling=true;
+  rpc('morocco_pull',{p_trip:CFG.trip,p_since:cursor}).then(function(rows){
+    pulling=false;
+    var changedBy=null,changed=false;
+    rows.forEach(function(r){
+      var cur=KV[r.k];
+      if(!cursor||Date.parse(r.at)>Date.parse(cursor))cursor=r.at;
+      if(cur&&cur.dirty)return;
+      if(!cur||Date.parse(cur.at)<Date.parse(r.at)||JSON.stringify(cur.v)!==JSON.stringify(r.v)){
+        KV[r.k]={v:r.v,by:r.by_who,at:r.at};changed=true;
+        if(r.by_who&&r.by_who!==S.me)changedBy=r.by_who;
+      }
+    });
+    saveLocal();setStatus(true);flush();
+    if(changed){
+      if(changedBy&&PEOPLE[changedBy])toast(PEOPLE[changedBy].name+' updated the plan');
+      onRemoteChange();
+    }
+  }).catch(function(){pulling=false;setStatus(false);});
+}
+
+function onRemoteChange(){
+  if(typing){pendingRender=true;return;}
+  refresh();
+}
+
+/* ================= trip data ================= */
+/* ---------- trip data ---------- */
+var DAYS=[
+{key:'2026-10-07',dow:'Wed',dn:'7',pl:'Agadir',
+ ov:{'a':{pl:'Mumbai',title:'Mumbai to Bahrain',sub:'Two overnight flights, landing in Casablanca early Thursday.',sun:'',wx:'',alert:''}},
+title:'London to Agadir',
+ sub:'Hritik and Gurleen fly in tonight. Vaishnavi and Rahul follow at dawn.',
+ sun:'Sunset about 18:15',wx:'Agadir 26° / 17°',alert:'',
+ stops:[
+ {id:'a1',who:'a',t:'18:45',tag:'travel',title:'Head for Mumbai airport, terminal 2',sum:'Gulf Air GF65 leaves at 21:45. Arrive about 3 hours ahead.',
+  more:'<p>E-ticket: Yatra ref 0909260047599, PNR IPCZKQ. The ticket allows 30 kg checked. Take your passport, valid for 6 months or more, and a Morocco visa or e-visa if your passport needs one.</p>',
+  links:[M('Mumbai airport terminal 2','Chhatrapati Shivaji Maharaj International Airport Terminal 2')]},
+ {id:'a2',who:'a',t:'21:45',tag:'travel',title:'Fly Mumbai to Bahrain',sum:'GF65 lands at 23:10 Bahrain time.'},
+ {id:'a3',who:'a',t:'23:10',tag:'travel',title:'Connection in Bahrain',sum:'About 2 hours 25 minutes before the next flight.',
+  more:'<p>Check the gate for GF143 as soon as you land, and eat something. The next flight is 8 hours 45 minutes.</p>'},
+ {id:'w1',who:'hgvr',for:'Hritik and Gurleen',t:'16:35',tag:'travel',title:'Fly Stansted to Agadir',sum:'Ryanair RK3033, booking VYWYVH. Lands 19:25 Morocco time.',
+  more:'<p>Morocco went back to GMT on 20 September, so it sits one hour behind the UK for the whole trip. Your phone should switch over when you land.</p><p>Have the hotel address ready for the immigration desk: Atlantic Palm Beach, City Founty A1, Secteur A, Zone Touristique, Agadir.</p>'},
+ {id:'w2',who:'hgvr',for:'Hritik and Gurleen',t:'19:25',tag:'travel',title:'Landing, passport control, cash',sum:'Allow 45 to 60 minutes before you are through.',
+  more:'<p>Take dirhams out at an airport ATM and say no if the machine offers to charge you in pounds. Keep a few small notes for tolls and parking.</p>'},
+ {id:'vr1',who:'hgvr',for:'Vaishnavi and Rahul',t:'20:00',tag:'stay',title:'Pack and rest',sum:'Ryanair FR3995 leaves Dublin at 06:25 tomorrow.',
+  more:'<p>Check in on the Ryanair app and save the boarding passes. Be at the airport by 04:00, so the alarm goes off very early.</p><p>Hritik and Gurleen fly to Agadir tonight and pick up the car.</p>',
+  care:'Put the fit to fly letter (needed from week 28), insurance details and maternity notes in hand luggage.'},
+ {id:'w3',who:'hgvr',for:'Hritik and Gurleen',t:'20:30',tag:'car',title:'Collect the Avis car',sum:'The airport desk is open until 23:00, so there is no rush.',
+  more:'<p>Film the whole car before you leave the bay: every panel, wheels, windscreen, interior, fuel gauge and mileage. The Car tab has a checklist.</p><p>Ask about the fuel policy, whether unpaved tracks are covered (Agafay on Saturday) and how the deposit gets released.</p>',
+  links:[M('Avis at Agadir airport','Avis Agadir Al Massira Airport'),T('Call Avis Agadir','+212522341184')]},
+ {id:'w4',who:'hgvr',for:'Hritik and Gurleen',t:'21:15',tag:'drive',title:'Drive to Atlantic Palm Beach',sum:'About 25 km, roughly 30 minutes.',
+  more:'<p>The hotel is in the Founty tourist zone. Reception is open 24 hours. Reviews say room standards vary, so check the room matches what you booked before you head up.</p>',
+  links:[M('Open in Maps',"Atlantic Palm Beach Apart'Hotel Agadir"),T('Call the hotel','+212528235303')]},
+ {id:'w5',who:'hgvr',for:'Hritik and Gurleen',t:'22:00',tag:'food',title:'Late bite and an early night',sum:'Ask reception for somewhere close.',
+  more:'<p>Vaishnavi and Rahul land at 09:15 tomorrow and you want to leave the hotel around 08:15.</p>'}
+ ]},
+
+{key:'2026-10-08',dow:'Thu',dn:'8',pl:'Marrakesh',
+ ov:{'a':{pl:'Casablanca',title:'Bahrain to Casablanca to Marrakesh',sub:'Land at 07:20, then the train south to meet everyone.',wx:'Casablanca 25° / 17°, Marrakesh 28° / 15°',alert:'You land in Casablanca, not Agadir. The others drive up from Agadir, so you meet them in Marrakesh.'}},
+title:'Agadir to Marrakesh',
+ sub:'Collect Vaishnavi and Rahul, then straight up the motorway.',
+ sun:'Sunset about 18:10',wx:'Marrakesh 28° / 15°',
+ alert:'Aman lands in Casablanca at 07:20, not Agadir. He needs his own route to Marrakesh (see the train stop below).',
+ stops:[
+ {id:'a4',who:'a',t:'01:35',tag:'travel',title:'Fly Bahrain to Casablanca',sum:'Gulf Air GF143 lands at 07:20 Morocco time.',
+  more:'<p>Morocco is 3 hours behind Bahrain, so your phone clock will jump back when you land. The flight is 8 hours 45 minutes.</p>'},
+ {id:'a5',who:'a',t:'07:20',tag:'travel',title:'Land at Casablanca Mohammed V',sum:'Terminal 2. Immigration, bags, dirhams.',
+  more:'<p>Take dirhams out at the airport ATM and say no to any offer to charge you in rupees. Sort a SIM or eSIM if you need one, message the group that you have landed, then follow the signs for the train.</p>',
+  links:[M('Open in Maps','Casablanca Mohammed V International Airport')]},
+ {id:'vr2',who:'hgvr',for:'Vaishnavi and Rahul',t:'04:00',tag:'travel',title:'Be at Dublin airport',sum:'Ryanair FR3995 leaves at 06:25. Bag drop and security first.',
+  care:'A very early start. Snacks and water in the bag, and the fit to fly letter if it applies.'},
+ {id:'vr3',who:'hgvr',for:'Vaishnavi and Rahul',t:'06:25',tag:'travel',title:'Fly Dublin to Agadir',sum:'Lands 09:15 Morocco time, which is 1 hour behind Ireland.'},
+ {id:'t1',who:'hgvr',for:'Hritik and Gurleen',t:'08:00',tag:'stay',title:'Breakfast and check out',sum:'Load the car and be moving by about 08:15.',
+  more:'<p>Confirm the checkout time at reception tonight so nothing is a scramble.</p>'},
+ {id:'t2',who:'hgvr',for:'Hritik and Gurleen',t:'08:45',tag:'drive',title:'Back to Agadir airport',sum:'About 30 minutes. Park up and wait in arrivals.',
+  links:[M('Agadir airport','Agadir Al Massira Airport arrivals')]},
+ {id:'t3',who:'hgvr',t:'09:15',tag:'travel',title:'Vaishnavi and Rahul land',sum:'Ryanair FR3995 from Dublin, scheduled 09:15. Hritik and Gurleen meet them in arrivals.',
+  care:'From week 28 of pregnancy Ryanair wants a fit to fly letter from a doctor or midwife, dated within 2 weeks of each flight. Worth checking she has one for both, and that her travel insurance covers pregnancy abroad. Let her rest after the early start.',
+  more:'<p>Passport control and bags can take up to an hour. Send them a pin of where you are parked. Cash machines and coffee are in arrivals.</p>'},
+ {id:'t4',who:'hgvr',t:'10:30',tag:'drive',title:'Leave for Marrakesh',sum:'About 270 km, roughly 3 hours on the toll motorway.',
+  more:'<p>One stop halfway is plenty. Keep small dirhams for the toll booths. The motorway limit is 120 and radar traps are common.</p>',
+  care:'Stop every 90 minutes or so to walk about, keep water in the car, and have the seatbelt sit low under the bump. Book an extra comfort stop, not a dash.'},
+ {id:'a6',who:'a',t:'',tag:'travel',title:'Train to Marrakesh (time to confirm)',sum:'ONCF from the airport station, changing at Casa Voyageurs.',
+  more:'<p>Allow about 4 hours in total. Pick a train, buy the ticket at the station or online, and share the arrival time with the group. Hritik and Gurleen are driving up from Agadir with Vaishnavi and Rahul, so there is no lift on the way.</p>',
+  links:[M('Marrakesh train station','Gare de Marrakech')]},
+ {id:'t5',ov:{'a':{title:'Meet the others for lunch',sum:'They park up around 13:45. Message when your train is in.',more:'<p>The others park at Parking La Koutoubia and eat near the souks (Nomad has a rooftop). Message when you are close and they will tell you where they are.</p>',care:''}},t:'13:45',tag:'food',title:'Park up and lunch near the medina',sum:'Check in is not until 16:00, so eat first.',
+  more:'<p>Parking La Koutoubia is the big guarded car park by the mosque, open 24 hours, a short walk from Jemaa el-Fna. The exit machine works out the fee, and reviews put it somewhere between 45 and 150 MAD a night.</p><p>Message Ida when you park and ask for a porter with a trolley and an early bag drop. For lunch, Nomad has a rooftop over the souks. Book ahead for a big group.</p>',
+  care:'Order hot, cooked through food and bottled water. Skip salads, ice and fresh juice.',
+  links:[M('Parking La Koutoubia','Parking La Koutoubia Marrakech'),M('Nomad rooftop','Nomad Marrakech')]},
+ {id:'t6',who:'hgvr',t:'',tag:'travel',title:'Aman arrives by train (time to confirm)',sum:'Gulf Air GF143 lands in Casablanca at 07:20.',
+  more:'<p>The easy way is the ONCF train from Mohammed V airport station, changing at Casa Voyageurs. Allow about 4 hours in total. Ask him which train he picks and meet him at Marrakesh station or send him straight to the riad.</p><p>The car cannot collect him on the way. Casablanca is in the opposite direction from Agadir.</p>',
+  links:[M('Mohammed V airport, Casablanca','Casablanca Mohammed V International Airport'),M('Marrakesh train station','Gare de Marrakech')]},
+ {id:'t7',t:'16:00',tag:'stay',title:"Check in at Ida's home",sum:'Arset el Houta, Marrakesh. Checkout is Saturday 10:00.',
+  more:'<p>Cars cannot reach most medina doors, so a meeting point or porter matters. Ask Ida the day before.</p>',
+  care:'Riad stairs are often steep and tiled. Ask Ida which room is lowest and whether the walk from the car park is short, and ask for a porter with a trolley.',
+  links:[M('Arset el Houta','Arset El Houta Marrakech')]},
+ {id:'t8',t:'17:30',tag:'sight',title:'Golden hour at Jemaa el-Fna',sum:'Sunset is about 18:10 and the square fills up as the light goes.',
+  more:'<p>Storytellers, drummers, juice carts. Agree a price before any photo, henna or snake charmer. A firm &quot;la, shukran&quot; does the job.</p>',
+  care:'It is crowded and warm. Take a rooftop table for the view and sit down often rather than standing in the crush.',
+  links:[M('Jemaa el-Fna','Jemaa el-Fna Marrakech')]},
+ {id:'t9',t:'19:30',tag:'food',title:'Easy dinner on the square',sum:'Stalls or a rooftop. The big night is Friday.',
+  more:'<p>Pick the stalls with queues and locals, and ask the price before you sit down.</p>',
+  care:'Stall food is safest straight off the grill and piping hot. Skip salads, juices with ice, and anything lukewarm. A sit down rooftop dinner is the easier choice.'}
+ ]},
+
+{key:'2026-10-09',dow:'Fri',dn:'9',pl:'Marrakesh',
+ ov:{'a':{sub:'Your first full day in Marrakesh after the overnight flights, so go easy on the early starts.'}},
+title:'Marrakesh, the full day',
+ sub:'The one whole day in the city, ending with Safran.',
+ sun:'Sunrise about 06:30, sunset 18:10',wx:'Marrakesh 28° / 15°',
+ alert:'Bahia Palace closes at 12:00 on Fridays, so it goes early. Some shops slow down around midday prayer.',
+ stops:[
+ {id:'f1',t:'05:15',tag:'adv',opt:true,title:'Sunrise hot air balloon',sum:'Roughly 5 hours door to door. Flight at sunrise, about 06:30.',
+  more:'<p>Pick up around 05:15, a 45 minute drive to the launch site, the flight, then a Berber breakfast. Marrakech By Air (4.8 stars, 1,300+ reviews) and M Ballooning (5.0, fewer reviews) both came up.</p><p>It is probably the priciest thing on this list and flights get cancelled for wind, so ask what happens if yours does. If you go, push Majorelle to after lunch and do Bahia Palace on Saturday morning (it opens at 09:00).</p>',
+  care:'Not for Vaishnavi. Many operators refuse pregnant passengers, and the basket climb and landing are rough. She can sleep in while the others go.',
+  links:[M('Marrakech By Air','Marrakech By Air hot air balloon'),M('M Ballooning','M Ballooning Marrakech')]},
+ {id:'f2',t:'08:30',tag:'sight',title:'Jardin Majorelle',sum:'Opens at 08:00. Book timed tickets online and go early.',
+  more:'<p>Cobalt blue walls, a cactus garden and a small Berber museum inside. About an hour. It gets hot and busy by late morning. The YSL museum next door is an easy add on.</p>',
+  links:[M('Open in Maps','Jardin Majorelle Marrakech')]},
+ {id:'f3',t:'10:15',tag:'sight',title:'Bahia Palace',sum:'Friday hours are 09:00 to 12:00, so this is the slot.',
+  more:'<p>The ticket booth is cash only, roughly 100 MAD per foreign adult. Allow an hour for the courtyards and painted ceilings.</p>',
+  links:[M('Open in Maps','Bahia Palace Marrakech')]},
+ {id:'f4',t:'11:45',tag:'sight',title:'Souks and Rahba Kedima',sum:'Walk north toward Jemaa el-Fna through the spice and leather lanes.',
+  more:'<p>Start well under the first price and be happy to walk away. Rahba Kedima, the old spice square, is a good place for lanterns and argan oil. Cafe des Epices is a shady stop.</p>',
+  care:'Heat, crowds and uneven ground. Take a taxi between sights, sit at cafes, and turn back early if it is too much.'},
+ {id:'f5',t:'13:00',tag:'food',title:'Lunch on a rooftop',sum:'Nomad looks over the spice market. Book if you can.',
+  more:'<p>Mid priced, 4.0 stars from 7,500 reviews. The food is more modern than traditional. Any rooftop near the square works if it is full.</p>',
+  links:[M('Nomad','Nomad Marrakech')]},
+ {id:'f6',t:'15:00',tag:'chill',title:'Hammam and massage',sum:'Les Bains de Marrakech by Bab Agnaou, 4.8 stars.',
+  more:'<p>Book ahead for a group and bring swimwear. Medina Spa and Hammam Paradis are the back ups if it is full.</p>',
+  care:'Skip the hot steam room and the hard scrub. If she wants a massage, book a therapist who does pregnancy massage and say so when booking. Or swap it for mint tea and Le Jardin Secret while the others go.',
+  links:[M('Les Bains de Marrakech','Les Bains de Marrakech Bab Agnaou')]},
+ {id:'f7',t:'17:45',tag:'chill',title:'Mint tea on a roof',sum:'Sunset is 18:10. Then back to the riad to change.'},
+ {id:'f8',t:'',tag:'food',title:'Dinner at Safran by Kôya',sum:'Booked. Tap the time to set your reservation.',
+  more:'<p>Rue Jbel Lakhdar, open 17:00 to 02:00. Reviews describe a proper show with music, dancing and a magician, so expect a loud, late night and dress smart.</p><p>Take a taxi from the medina and ask for the meter, or agree the fare first.</p>',
+  links:[M('Safran by Kôya','Safran by Kôya Marrakech'),T('Call Safran','+212610509902')]}
+ ]},
+
+{key:'2026-10-10',dow:'Sat',dn:'10',pl:'Agafay',
+ ov:{'a':{sub:'Sunset and dinner in the desert with the group, then the long ride north.'}},
+title:'Marrakesh, Agafay, Rabat',
+ sub:'Sunset and dinner in the desert, then the drive north.',
+ sun:'Sunset about 18:05',wx:'Desert evenings drop to the low teens',
+ alert:'The desert plan is built around scenery, food and sunset, with the rides for the others. Leaving at 19:45 puts you in Rabat around midnight.',
+ stops:[
+ {id:'s1',t:'08:30',tag:'stay',title:'Breakfast and pack',sum:'Get everything by the door before 10:00.'},
+ {id:'s2',t:'10:00',tag:'stay',title:'Check out',sum:"Latest checkout at Ida's is 10:00.",
+  more:'<p>Have the porter take bags to the car park. Do not leave anything valuable visible in the car.</p>'},
+ {id:'s3',t:'10:30',tag:'sight',opt:true,title:'Last souk run or Le Jardin Secret',sum:'Gifts, lanterns, argan oil, or a calm walled garden in the medina.',
+  more:'<p>If you moved Bahia Palace here because of the balloon, it opens at 09:00.</p>'},
+ {id:'s4',ov:{'a':{title:'Lunch',sum:'Eat properly, dinner at the camp comes late.',more:''}},t:'13:00',tag:'food',title:'Lunch and fuel up',sum:'Fill the tank before you leave the city.',
+  more:'<p>The camps are out of town and the run to Rabat is long. Eat properly, dinner at the camp comes late.</p>'},
+ {id:'s5',ov:{'a':{title:'Ride to the Agafay desert',sum:'About 45 to 60 minutes from the city.',more:'<p>Main road first, then a stony track for the last stretch at most camps. Keep water with you, and send the camp your pin if you arrive separately.</p>'}},t:'14:30',tag:'drive',title:'Drive to the Agafay desert',sum:'About 45 to 60 minutes from the city.',
+  more:'<p>Main road first, then a stony track for the last stretch at most camps. Ask Avis whether unpaved tracks are covered. If they are not, park at the camp meeting point and take their 4x4 for the last bit.</p><p>Send the camp a pin before you leave. The nearest 24 hour clinic is Clinique Internationale de Marrakech, roughly an hour from most camps.</p>',
+  care:'The track is bumpy. When you book, ask for the smoothest access, or a car park close to the tents, and avoid the rattling open truck transfers.',
+  links:[M('Sunset Agafay','Sunset Agafay'),M('Agafay Luxury Camp','Agafay Luxury Camp')]},
+ {id:'s6',t:'15:45',tag:'chill',title:'Settle in: shade, mint tea, cushions',sum:'Arrive, drink water, and see the camp before anything active.',
+  more:'<p>Sunset Agafay has a pool and lounge areas looking over the desert, according to reviews. Ask for a shaded table with cushions near the toilets. One review of Agafay Luxury Camp mentions carrying luggage across sand to the tents, so ask how far it is from the car.</p>',
+  care:'This is the easy version of the afternoon. Water, hat, shade and a proper sit down while the others decide what to do.'},
+ {id:'s7',ov:{'a':{title:'Quad bikes'}},t:'16:15',tag:'adv',opt:true,title:'Quad bikes (for the others)',sum:'Around an hour across the stony plain, guided.',
+  more:'<p>Closed shoes, sunglasses and a scarf over your face for the dust. Ask them to time it so you are back before sunset.</p>',
+  care:'Skip. Quads jolt hard and collisions happen. She stays at the camp with tea and the view. Buggies carry the same advice.'},
+ {id:'s7b',ov:{'a':{title:'Camel ride'}},t:'17:15',tag:'adv',opt:true,title:'Camel ride (for the others)',sum:'20 to 30 minutes, timed for the golden light.',
+  care:'Skip. Climbing on, climbing off and the swaying are commonly advised against in pregnancy. Standing beside the camels for photos is fine.'},
+ {id:'s8',t:'18:05',tag:'sight',title:'Sunset over the Atlas',sum:'It cools off fast once the sun is down, so bring a layer.',
+  care:'A short, flat walk to a viewpoint or just a cushion and a shawl. Nothing that needs a climb.'},
+ {id:'s9',t:'18:30',tag:'food',title:'Early dinner and fire show',sum:'Tagines, music and a fire show, booked from 18:30.',
+  more:'<p>Message two or three camps on WhatsApp and ask for the sunset dinner for your group size from 18:30, with a meeting point rather than hotel pick up. Skip the quad and camel add ons if they are bundled, and ask for the price without them.</p><p>Sunset Agafay (4.7 stars) and Agafay Luxury Camp (4.5, 2,900+ reviews) came up. Chameau Marrakech (4.9) is an activity operator.</p>',
+  care:'Cooked through food only: well done meat, no raw salad, no unpasteurised cheese, bottled water and hot tea. Sit somewhere the fire show is not too loud or smoky.',
+  links:[M('Sunset Agafay','Sunset Agafay'),M('Agafay Luxury Camp','Agafay Luxury Camp'),M('Chameau Marrakech','Chameau Marrakech quad Agafay')]},
+ {id:'s10',ov:{'a':{title:'Ride to Rabat',sum:'About 330 km, close to 4 hours on the toll motorway.',more:'<p>A long night ride. Keep the driver company, keep water handy, and stop at the services when anyone needs a break.</p>'}},t:'19:45',tag:'drive',title:'Leave for Rabat',sum:'About 330 km, close to 4 hours on the toll motorway.',
+  more:'<p>Share the driving, stop at the motorway services, and watch for animals and unlit vehicles on the slip roads. Message Youssef your arrival time before you leave the camp.</p>',
+  care:'The longest drive of the trip. Stop every 90 minutes to walk about, keep water in the car, and keep the seatbelt low under the bump. If she is flagging, leave earlier or stop for a rest.'},
+ {id:'s11',t:'00:00',tag:'stay',title:'Arrive in Rabat and check in',sum:'Around midnight. Avenue Moustapha Assayeh.',
+  more:'<p>Check in is from 15:00 on Saturday. Ask Youssef how to collect the keys at that hour.</p>',
+  care:'Ask Youssef which floor the flat is on and whether there is a lift, so there are no surprises at midnight.',
+  links:[M('Search the area','Avenue Mustapha Sayah Rabat')]}
+ ]},
+
+{key:'2026-10-11',dow:'Sun',dn:'11',pl:'Rabat',title:'Rabat, beach day',
+ sub:'Nothing before brunch. Sea first, then the Kasbah at golden hour.',
+ sun:'Sunset about 18:00',wx:'Rabat 24° / 16°, sea about 20°',
+ alert:'Marea (seafood) is lunch only on Sundays and shut on Mondays.',
+ stops:[
+ {id:'u1',t:'10:30',tag:'food',title:'Slow brunch',sum:'No alarms after last night.',
+  more:'<p>Ask Youssef where locals eat breakfast nearby, and which beach is a walk from the flat. The listing shows a sea view from the coast road.</p>'},
+ {id:'u2',t:'12:00',tag:'chill',title:'Beach time',sum:'Three options depending on the swell and your mood.',
+  more:'<p>Plage de Rabat sits below the Kasbah and has the surf schools. Harhoura and Petit Val d\'Or are south of the city and calmer, and reviews call Petit Val d\'Or family friendly with small waves.</p><p>Plage des Nations at Sidi Bouknadel is a long beach north of the city, about 30 minutes by car, with bigger waves, lifeguards and strong currents mentioned in reviews.</p>',
+  care:'Petit Val d\'Or is the calm one. Paddle or swim only in flat water near a lifeguard, stay in the shade in the middle of the day, and skip Plage des Nations because of the currents.',
+  links:[M('Plage de Rabat','Plage de Rabat'),M('Petit Val d\'Or','Plage Petit Val d\'Or Harhoura'),M('Plage des Nations','Plage des Nations Sidi Bouknadel')]},
+ {id:'u3',t:'14:00',tag:'food',title:'Beach lunch',sum:'Grilled fish or seafood close to where you are.',
+  more:'<p>Marea in the medina is a proper seafood sit down and is open on Sunday from 12:00 to 17:00.</p>',
+  care:'Fish and seafood only if it is cooked through, no raw or lightly cooked shellfish. Grilled and hot is the safe order.',
+  links:[M('Marea','Restaurant Marea Rabat')]},
+ {id:'u4',t:'15:30',tag:'adv',opt:true,title:'Surf lesson',sum:'Beginner lessons right on Plage de Rabat.',
+  more:'<p>Piranha Surfing (5.0, 146 reviews) and Rabat Surf School (5.0, 760+ reviews) both sit on the sand. Reviews say the wetsuit and board are included. Message for price and a group slot.</p>',
+  care:'Skip. Falls and the paddling are not for her. She can watch from the sand with a book and a cold drink.',
+  links:[M('Piranha Surfing','Piranha Surfing Rabat'),M('Rabat Surf School','Rabat Surf School Chadi'),T('Call Rabat Surf School','+212619196819')]},
+ {id:'u5',t:'',tag:'adv',opt:true,title:'Quad through the forest and beach',sum:'GoRabat runs one hour quad tours if surf is not your thing.',
+  more:'<p>5.0 stars but from a small number of reviews. Ask about group size and start times.</p>',
+  care:'Skip, same reason as the Agafay quads.',
+  links:[M('GoRabat','GoRabat quad Rabat')]},
+ {id:'u6',t:'17:15',tag:'sight',title:'Kasbah of the Udayas',sum:'Blue and white lanes above the river mouth. Sunset about 18:00.',
+  more:'<p>The Kasbah is free to wander. The garden and museum keep their own hours and are closed on Tuesdays. Get to the far viewpoint about 17:30, then have mint tea on the terrace cafe and walk back through the medina.</p>',
+  links:[M('Open in Maps','Kasbah of the Udayas Rabat')]},
+ {id:'u7',t:'18:30',tag:'adv',opt:true,title:'Ferry across the Bouregreg',sum:'A small wooden boat to Salé, about 5 minutes for a few dirhams.',
+  more:'<p>A recent review put it at 10 MAD. The Salé marina side is good for a walk and a drink once the lights come on.</p>',
+  care:'Only if she is comfortable stepping into a small boat. Otherwise the marina can be reached by taxi.',
+  links:[M('Marina Bouregreg','Marina Bouregreg Salé')]},
+ {id:'u8',t:'20:00',tag:'food',title:'Dinner',sum:'Two good picks, depending on the mood.',
+  more:'<p>Dar Al Fawakih Medina is big, busy and easy for a large group, open late (4.7 stars). Egiodola is the date night option, with live music some nights, higher prices and a 16:00 opening. Book ahead (4.8 stars).</p>',
+  links:[M('Dar Al Fawakih','Dar Al Fawakih Medina Rabat'),M('Egiodola','Egiodola Rabat')]},
+ {id:'u9',t:'22:00',tag:'stay',title:'Pack and sort tomorrow',sum:'Monday has three departures. Settle the Aman plan tonight.',
+  more:'<p>The Crew tab shows who leaves when.</p>'}
+ ]},
+
+{key:'2026-10-12',dow:'Mon',dn:'12',pl:'Rabat',
+ ov:{'a':{pl:'Casablanca',title:'Rabat to Casablanca to Bahrain',sub:'Early start for the 09:00 flight.',sun:'',wx:'',alert:'GF142 leaves Casablanca at 09:00. Rabat to that airport is about 1 hour 30, so decide on Sunday how you get there.'}},
+title:'Goodbyes and home',
+ sub:'Three departures from two airports, and the car goes back tonight.',
+ sun:'Sunset about 18:00',wx:'Rabat 24° / 16°',
+ alert:'Aman flies from Casablanca at 09:00. Rabat to that airport is about 1 hour 30, so decide how he gets there on Sunday.',
+ stops:[
+ {id:'m1',who:'hgvra',ov:{'a':{title:'Get to Casablanca airport',sum:'GF142 leaves at 09:00. Check in opens about 06:00.',more:'<p>Options: a lift from Hritik and Gurleen leaving around 03:45, a room near the airport on Sunday night, or an early train or taxi. Whichever you pick, sort it before you sleep on Sunday.</p>'}},t:'03:45',tag:'drive',title:'Aman to Casablanca airport (plan to confirm)',sum:'GF142 leaves at 09:00 and check in opens about 06:00.',
+  more:'<p>If you drive him, leave around 03:45. Other ways: he takes a room near the airport on Sunday night, or an early train or taxi. Whichever you pick, sort it before you sleep on Sunday.</p>',
+  links:[M('Casablanca Mohammed V airport','Casablanca Mohammed V International Airport')]},
+ {id:'m2',who:'hgvr',t:'07:30',tag:'drive',title:'Vaishnavi and Rahul to Rabat airport',sum:'FR163 leaves at 10:40. Be at the airport by 08:30.',
+  more:'<p>About 30 minutes from the flat. Ryanair asks for two hours before departure.</p>',
+  care:'If she is 28 weeks or more, the fit to fly letter has to cover the return flight too (dated within 2 weeks of it).',
+  links:[M('Rabat-Salé airport','Rabat-Salé Airport')]},
+ {id:'a7',who:'a',t:'09:00',tag:'travel',title:'Fly Casablanca to Bahrain',sum:'Gulf Air GF142 lands at 18:05 Bahrain time.'},
+ {id:'a8',who:'a',t:'18:05',tag:'stay',title:'Bahrain until Thursday',sum:'Your ticket has GF64 home on Thu 15 Oct at 14:30, landing in Mumbai at 20:55.',
+  more:'<p>The ticket shows three days between the Morocco flight and the flight home, so check your plans and any entry rules for the stay in Bahrain.</p>'},
+ {id:'m3',who:'hgvr',for:'Hritik and Gurleen',t:'09:30',tag:'food',title:'Slow breakfast',sum:'One last coffee before the sightseeing.'},
+ {id:'vr4',who:'hgvr',for:'Vaishnavi and Rahul',t:'10:40',tag:'travel',title:'Fly Rabat to Dublin',sum:'Ryanair FR163 lands at 15:05 Irish time.'},
+ {id:'m4',who:'hgvr',for:'Hritik and Gurleen',t:'11:00',tag:'stay',title:'Check out',sum:'Latest checkout 11:00. Bags stay in the car.'},
+ {id:'m5',who:'hgvr',for:'Hritik and Gurleen',t:'11:30',tag:'sight',title:'Hassan Tower and the Mausoleum',sum:'Free, same site, quiet before midday.',
+  more:'<p>The unfinished Almohad tower and the Mohammed V Mausoleum sit side by side. The mausoleum is open Monday 08:00 to 18:00.</p>',
+  links:[M('Hassan Tower','Hassan Tower Rabat')]},
+ {id:'m6',who:'hgvr',for:'Hritik and Gurleen',t:'13:00',tag:'sight',title:'Chellah',sum:'Roman ruins, gardens and storks. About an hour.',
+  more:'<p>Open 09:00 to 20:00. Reviews say parking is free.</p>',
+  links:[M('Chellah','Chellah Rabat')]},
+ {id:'m7',who:'hgvr',for:'Hritik and Gurleen',t:'14:30',tag:'food',title:'Lunch at Dar Lwalida',sum:'Tiny, cheap, 4.9 stars. Beans, lentils and tagines.',
+  more:'<p>Open Monday 12:00 to 20:00 and closed on Sundays, so today is the day for it.</p>',
+  links:[M('Dar Lwalida','Dar Lwalida Rabat')]},
+ {id:'m8',who:'hgvr',for:'Hritik and Gurleen',t:'16:30',tag:'car',title:'Refuel and return the Avis car',sum:'The Rabat-Salé airport desk is open until midnight.',
+  more:'<p>Fill up to the level in your agreement and keep the receipt. Film the return with the agent standing there, ask for a closing receipt on paper, and ask when the deposit is released.</p>',
+  links:[M('Avis at Rabat-Salé airport','Avis Aéroport Rabat-Salé'),T('Call Avis Rabat','+212522688966')]},
+ {id:'m9',who:'hgvr',for:'Hritik and Gurleen',t:'17:45',tag:'travel',title:'Check in for Stansted',sum:'RK1365 leaves at 20:30, lands 00:40 on Tuesday 13th UK time.',
+  more:'<p>Use the Ryanair reservation code from the airline email. The Trip.com booking number is not the airline code. Aim to be at the desk by about 18:00.</p>'},
+ {id:'m10',who:'hgvr',for:'Hritik and Gurleen',t:'20:30',tag:'travel',title:'Fly home',sum:'Rabat to Stansted, arriving 00:40 UK time.'}
+ ]}
+];
+
+var FLIGHTS=[
+ {g:'hg',who:'Hritik and Gurleen',legs:[
+  {code:'RK3033',rt:'London Stansted to Agadir',d:'Wed 7 Oct',dep:'16:35',arr:'19:25',nt:'Ryanair UK, booking VYWYVH.'},
+  {code:'RK1365',rt:'Rabat-Salé to London Stansted',d:'Mon 12 Oct',dep:'20:30',arr:'00:40 (Tue 13 Oct)',nt:'Ryanair UK, booked through Trip.com (booking 1653717376632424, £90.60). Check in with the Ryanair reservation code from the airline email, not the Trip.com number.'}]},
+ {g:'vr',who:'Vaishnavi and Rahul',legs:[
+  {code:'FR3995',rt:'Dublin to Agadir',d:'Thu 8 Oct',dep:'06:25',arr:'09:15',nt:'Ryanair. Reservation codes are in their itinerary emails. Fit to fly letter needed from week 28 of pregnancy.'},
+  {code:'FR163',rt:'Rabat-Salé to Dublin',d:'Mon 12 Oct',dep:'10:40',arr:'15:05',nt:'Ryanair. Be at the airport by 08:30. Fit to fly letter needed from week 28 of pregnancy.'}]},
+ {g:'a',who:'Aman',legs:[
+  {code:'GF65',rt:'Mumbai to Bahrain',d:'Wed 7 Oct',dep:'21:45',arr:'23:10',nt:'Gulf Air, PNR IPCZKQ, Yatra ref 0909260047599.'},
+  {code:'GF143',rt:'Bahrain to Casablanca',d:'Thu 8 Oct',dep:'01:35',arr:'07:20',nt:'Lands at Mohammed V, terminal 2. This is Casablanca, not Agadir.'},
+  {code:'GF142',rt:'Casablanca to Bahrain',d:'Mon 12 Oct',dep:'09:00',arr:'18:05',nt:'Airport check in by about 06:00.'},
+  {code:'GF64',rt:'Bahrain to Mumbai',d:'Thu 15 Oct',dep:'14:30',arr:'20:55',nt:'Gulf Air, same PNR.'}]}
+];
+
+var CONFIRM=[
+ ['Does the Avis car fit five people and five bags?','Aman has a 30 kg bag and the boot has to take everything. Ask Avis for a bigger car if it is tight.','hg'],
+ ['Safran booking time and party size','Set the time on the Friday plan once you have it.','hg'],
+ ['Aman: train from Casablanca airport to Marrakesh on Thursday','Pick a train, share it with the group, and agree where to meet.','hgvra'],
+ ['Aman: how he gets to Casablanca airport on Monday morning','GF142 leaves at 09:00. A lift at 03:45, a room near the airport, or an early train.','hga'],
+ ['Morocco visa or e-visa','Worth checking before the 7th if your passport needs one.','a'],
+ ['Avis: fuel policy, cover on unpaved tracks, deposit release','Agafay camps sit on stony tracks at the end.','hg'],
+ ['Second driver on the Avis agreement for Saturday night?','Only named drivers are covered, and the run to Rabat is about 4 hours.','hg'],
+ ['Agafay camp booked for a gentle afternoon: lounge, sunset, early dinner','Ask about smooth access, shade and toilets, and dinner from 18:30. Details on the Saturday plan.','hgvr'],
+ ['Balloon on Friday, for the others only: yes or no','Vaishnavi sits it out. It changes the Friday and Saturday mornings.','hgvra'],
+ ['Fit to fly letters and travel insurance for Vaishnavi','Only needed from week 28, but insurance should cover pregnancy abroad either way.','vr'],
+ ['Ryanair reservation codes for the return flights','For Hritik and Gurleen the Trip.com number will not work on Ryanair check in.','hgvr']
+];
+
+var STAYS=[
+ {who:'hg',n:'Atlantic Palm Beach Apart\'Hotel',w:'Wed 7 to Thu 8 Oct, one night',
+  kv:[['Where','City Founty A1, Secteur A, Zone Touristique, Agadir'],['Reception','Open 24 hours'],['Phone','+212 5 28 23 53 03'],['Heads up','Room quality varies in reviews. Check it matches your booking.']],
+  links:[M('Open in Maps',"Atlantic Palm Beach Apart'Hotel Agadir"),T('Call','+212528235303')]},
+ {n:"Ida's home in Marrakesh",w:'Thu 8 Oct 16:00 to Sat 10 Oct 10:00',
+  kv:[['Where','Arset el Houta, in the medina'],['Host','Ida, message through the Airbnb app'],['Ask her','Porter and meeting point, early bag drop, which car park she likes'],['Car park','Parking La Koutoubia is guarded and 24 hours']],
+  links:[M('Arset el Houta','Arset El Houta Marrakech'),M('Parking La Koutoubia','Parking La Koutoubia Marrakech')]},
+ {n:"Youssef's home in Rabat",w:'Sat 10 Oct 15:00 to Mon 12 Oct 11:00',
+  kv:[['Where','Avenue Moustapha Assayeh, Rabat'],['Host','Youssef, message through the Airbnb app'],['Arriving','About 00:45 on Sunday. Ask how to get the keys.'],['View','The listing shows a sea view balcony']],
+  links:[M('Search the area','Avenue Mustapha Sayah Rabat')]}
+];
+
+var BOOKINGS=[
+ {n:'Safran by Kôya',w:'Fri 9 Oct, time to confirm',kv:[['Where','Rue Jbel Lakhdar, Marrakesh'],['Hours','17:00 to 02:00'],['Phone','+212 6 10 50 99 02']],links:[M('Open in Maps','Safran by Kôya Marrakech'),T('Call','+212610509902')]},
+ {who:'hg',n:'Avis pick up, Agadir airport',w:'Wed 7 Oct evening',kv:[['Desk hours','08:00 to 23:00'],['Phone','+212 5 22 34 11 84']],links:[M('Open in Maps','Avis Agadir Al Massira Airport'),T('Call','+212522341184')]},
+ {who:'hg',n:'Avis drop off, Rabat-Salé airport',w:'Mon 12 Oct, before about 17:30',kv:[['Desk hours','08:00 to 00:00'],['Phone','+212 5 22 68 89 66']],links:[M('Open in Maps','Avis Aéroport Rabat-Salé'),T('Call','+212522688966')]},
+ {who:'a',n:'Casablanca Mohammed V airport',w:'Arrive Thu 8 Oct 07:20, leave Mon 12 Oct 09:00',kv:[['Terminal','Terminal 2, both ways'],['Arrive','Gulf Air GF143 at 07:20'],['Leave','Gulf Air GF142 at 09:00, check in by about 06:00'],['Train','ONCF from the airport station, change at Casa Voyageurs for Marrakesh, about 4 hours']],links:[M('Open in Maps','Casablanca Mohammed V International Airport'),M('Marrakesh station','Gare de Marrakech')]},
+ {who:'vr',n:'Agadir and Rabat-Salé airports',w:'Arrive Agadir Thu 8 Oct 09:15, leave Rabat Mon 12 Oct 10:40',kv:[['Arrive','Ryanair FR3995, Agadir at 09:15'],['Leave','Ryanair FR163 from Rabat-Salé at 10:40, be there by 08:30'],['Pick up','Hritik and Gurleen meet you in Agadir arrivals'],['Drop off','Hritik and Gurleen drive you to Rabat-Salé on Monday']],links:[M('Agadir airport','Agadir Al Massira Airport'),M('Rabat-Salé airport','Rabat-Salé Airport')]}
+];
+
+var LEGS=[
+ ['Agadir airport to hotel','25 km','30 min','Founty tourist zone','hg'],
+ ['Agadir to Marrakesh','270 km','3 h','Toll motorway'],
+ ['Marrakesh to Agafay camps','30 to 40 km','45 to 60 min','Stony track at the end'],
+ ['Agafay to Rabat','330 km','3 h 45 to 4 h','Toll motorway, night driving'],
+ ['Rabat flat to Rabat-Salé airport','20 km','30 min','Airport runs on Monday','hgvr'],
+ ['Rabat to Casablanca airport','110 km','1 h 30','For Aman on Monday','hga']
+];
+
+var CAR_PICK=[
+ 'Film a full walk around with the timestamp on, panels, wheels, roof, windscreen',
+ 'Close up photos of every scratch, dent and scuffed alloy',
+ 'Tyres, spare wheel and jack are there',
+ 'Interior and seats checked, boot empty',
+ 'Photo of the fuel gauge and the mileage',
+ 'Air con and lights work',
+ 'Registration and insurance papers are in the car',
+ 'Fuel policy confirmed with the agent',
+ 'Unpaved track cover confirmed (Agafay)',
+ 'Deposit amount and release date confirmed'
+];
+var CAR_DROP=[
+ 'Filled up to the agreed level, receipt kept',
+ 'Film a walk around with the agent standing there',
+ 'Photo of the fuel gauge and the mileage',
+ 'Personal items out, glovebox and boot checked',
+ 'Closing receipt on paper, no damage noted',
+ 'Deposit release date confirmed'
+];
+
+var CLINICS=[
+ ['Marrakesh','Clinique Internationale de Marrakech','Route de l\'aéroport, Guemassa. Open 24 hours, 4.3 stars.','+212524369595'],
+ ['Marrakesh','The Marrakech Clinic','Quartier Masmoudi Targa. Open 24 hours, 4.4 stars.','+212524396565'],
+ ['Rabat','Clinique Agdal','Avenue Ibn Sina, Agdal. Open 24 hours, 3.1 stars.','+212537777777'],
+ ['Rabat','Ibn Rochd Clinic','Avenue Ibn Rochd. Open 24 hours, 3.8 stars.','+212537672421'],
+ ['Agadir','Grand Clinique Agadir','Avenue Abderrahim Bouabid. Open 24 hours, 4.5 stars from 30 reviews.','+212623555022']
+];
+
+var CUR=[['GBP','Pounds','£'],['EUR','Euros','€'],['INR','Rupees','₹'],['MAD','Dirhams','MAD']];
+var RATES_DEF={GBP:1,EUR:1.1662,INR:128.45,MAD:12.75};
+
+var PACK=[
+ {n:'Documents',items:['Passports, valid for 6 months or more','Airbnb messages and flight codes saved offline','Travel insurance details','Safran booking screenshot']},
+ {n:'For Vaishnavi',who:'vr',items:['Fit to fly letters if she is 28 weeks or more, dated within 2 weeks of each flight','Travel insurance that covers pregnancy abroad, with the 24 hour helpline saved','Maternity notes','Snacks, and a big bottle of water','Flight socks or anything her doctor suggests']},
+ {n:'For Aman',who:'a',items:['Morocco visa or e-visa, if your passport needs one','E-ticket and PNR saved offline (Yatra ref 0909260047599, PNR IPCZKQ)','Bag weighed against the 30 kg allowance','Plans for Bahrain from Mon 12 to Thu 15 Oct','A warm layer for the flights and the desert evening']},
+ {n:'For the car',who:'hg',items:['Driving licences','Avis booking and the card for the deposit','Phone mount and car charger','Snacks and water for the long drives']},
+ {n:'Money',items:['Dirhams in cash, from an ATM once you land','Small notes for tolls, parking, tips and taxis','A card with no foreign fees','Decide how to split costs before the trip']},
+ {n:'Tech',items:['Type C and E plug adapters (Morocco runs 220V)','Power bank','Offline maps for Casablanca, Agadir, Marrakesh, Rabat and the routes between','eSIM or roaming sorted before you fly']},
+ {n:'Clothes',items:['Comfy shoes for medina cobbles','Light layers for the desert after dark','Shoulders and knees covered for mosques and the old medina','Swimwear for the hammam and Rabat beach','Something smart for Safran','Sunglasses, hat, sun cream','Scarf or buff for quad dust']},
+ {n:'Health',items:['Water bottle, and stick to bottled water','Stomach and rehydration sachets','Painkillers and plasters','Hand sanitiser and wipes','Any prescriptions in their original boxes']}
+];
+
+var PHRASES=[
+ ['Salam','Hello, formal reply is "wa alaykum salam"','Bonjour'],
+ ['Labas?','How are you? Reply "labas, hamdullah"','Ça va ?'],
+ ['Shukran (bzaf)','Thank you (very much)','Merci (beaucoup)'],
+ ['Afak','Please','S\'il vous plaît'],
+ ['Iyeh / La','Yes / No','Oui / Non'],
+ ['La, shukran','No thank you, the polite way out of a sales pitch','Non merci'],
+ ['Bshhal hada?','How much is this?','Combien ça coûte ?'],
+ ['Ghali bzaf','Too expensive','C\'est trop cher'],
+ ['Wakha','OK, agreed','D\'accord'],
+ ['Bghit...','I would like...','Je voudrais...'],
+ ['Atay bla sukkar','Tea without sugar','Thé sans sucre'],
+ ['Fin kayn...?','Where is...?','Où est... ?'],
+ ['Nishan / Yemin / Isar','Straight on / right / left','Tout droit / droite / gauche'],
+ ['L-hisab, afak','The bill, please','L\'addition, s\'il vous plaît'],
+ ['Mashi mushkil','No problem','Pas de problème'],
+ ['Smahli','Excuse me, sorry','Excusez-moi'],
+ ['Ma fhemtsh','I don\'t understand','Je ne comprends pas'],
+ ['Ma bghitsh guide','I don\'t need a guide','Je n\'ai pas besoin de guide'],
+ ['Compteur, afak','Meter on please (taxis)','Le compteur, s\'il vous plaît'],
+ ['Bssaha','Enjoy your meal, to your health','Bon appétit'],
+ ['Yallah','Let\'s go','On y va'],
+ ['Bslama','Goodbye','Au revoir']
+];
+
+
+/* ================= people and routes ================= */
+var PEOPLE={
+  h:{name:'Hritik',g:'m',f:'hg',tz:'Europe/London',tzn:'UK',sub:'London to Agadir, Wed 7 Oct'},
+  g:{name:'Gurleen',g:'m',f:'hg',tz:'Europe/London',tzn:'UK',sub:'London to Agadir, Wed 7 Oct'},
+  a:{name:'Aman',g:'a',f:'a',tz:'Asia/Kolkata',tzn:'India',sub:'Mumbai and Bahrain to Casablanca, Thu 8 Oct'},
+  v:{name:'Vaishnavi',g:'m',f:'vr',tz:'Europe/Dublin',tzn:'Ireland',sub:'Dublin to Agadir, Thu 8 Oct'},
+  r:{name:'Rahul',g:'m',f:'vr',tz:'Europe/Dublin',tzn:'Ireland',sub:'Dublin to Agadir, Thu 8 Oct'}
+};
+var ORDER=['h','g','a','v','r'];
+var ROUTES={
+  m:{nodes:[['Agadir','\u0623\u0643\u0627\u062F\u064A\u0631','7 to 8 Oct'],['Marrakesh','\u0645\u0631\u0627\u0643\u0634','8 to 10 Oct'],['Rabat','\u0627\u0644\u0631\u0628\u0627\u0637','10 to 12 Oct']]},
+  a:{nodes:[['Casablanca','\u0627\u0644\u062F\u0627\u0631 \u0627\u0644\u0628\u064A\u0636\u0627\u0621','Thu 8 Oct'],['Marrakesh','\u0645\u0631\u0627\u0643\u0634','8 to 10 Oct'],['Rabat','\u0627\u0644\u0631\u0628\u0627\u0637','10 to 12 Oct'],['Casablanca','\u0627\u0644\u062F\u0627\u0631 \u0627\u0644\u0628\u064A\u0636\u0627\u0621','Mon 12 Oct']]}
+};
+var WINDOW={
+  hg:[Date.UTC(2026,9,7,15,35),Date.UTC(2026,9,12,23,40)],
+  vr:[Date.UTC(2026,9,8,5,25),Date.UTC(2026,9,12,14,5)],
+  a:[Date.UTC(2026,9,7,16,15),Date.UTC(2026,9,12,15,5)]
+};
+var CURORDER={hg:['GBP','EUR','INR','MAD'],vr:['EUR','GBP','INR','MAD'],a:['INR','GBP','EUR','MAD']};
+var CURSTART={hg:{code:'GBP',val:100},vr:{code:'EUR',val:100},a:{code:'INR',val:10000}};
+var SYM={GBP:'\u00A3',EUR:'\u20AC',INR:'\u20B9'};
+var DAY_AR=['\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621','\u0627\u0644\u062E\u0645\u064A\u0633','\u0627\u0644\u062C\u0645\u0639\u0629','\u0627\u0644\u0633\u0628\u062A','\u0627\u0644\u0623\u062D\u062F','\u0627\u0644\u0627\u062B\u0646\u064A\u0646'];
+var SEC_AR={plan:'\u0627\u0644\u0628\u0631\u0646\u0627\u0645\u062C',places:'\u0627\u0644\u0623\u0645\u0627\u0643\u0646',team:'\u0627\u0644\u0641\u0631\u064A\u0642',stay:'\u0627\u0644\u0625\u0642\u0627\u0645\u0629',money:'\u0627\u0644\u0645\u0627\u0644',pack:'\u0627\u0644\u062D\u0642\u064A\u0628\u0629',ask:'\u0627\u0644\u0645\u0633\u0627\u0639\u062F'};
+var SEC_EN={plan:'Plan',places:'Places',team:'Team',stay:'Stay',money:'Money',pack:'Pack',ask:'Ask Claude'};
+
+var PINS={
+  w1:'London Stansted Airport',w2:'Agadir Al Massira Airport',t1:"Atlantic Palm Beach Apart'Hotel Agadir",t3:'Agadir Al Massira Airport',
+  t9:'Jemaa el-Fna Marrakech',f4:'Rahba Kedima Marrakech',f7:'Cafe des Epices Marrakech',s2:'Arset El Houta Marrakech',
+  s6:'Sunset Agafay',s7:'Sunset Agafay',s7b:'Sunset Agafay',s8:'Sunset Agafay',m9:'Rabat-Sal\u00E9 Airport',m10:'Rabat-Sal\u00E9 Airport',
+  a2:'Chhatrapati Shivaji Maharaj International Airport Terminal 2',a4:'Casablanca Mohammed V International Airport',a7:'Casablanca Mohammed V International Airport',
+  u9:'Avenue Mustapha Sayah Rabat',vr2:'Dublin Airport',vr3:'Dublin Airport',vr4:'Rabat-Sal\u00E9 Airport'
+};
+DAYS.forEach(function(d,i){
+  d.ar=DAY_AR[i];
+  d.stops.forEach(function(s){if(PINS[s.id]&&!s.q)s.q=PINS[s.id];});
+});
+if(!S.rates)S.rates=copy(RATES_DEF);
+
+var IDEAS=[
+ {id:'i-menara',n:'Menara Gardens',c:'Marrakesh',t:'Olive groves and a pavilion pool. An easy sunset stroll.',q:'Menara Gardens Marrakech'},
+ {id:'i-badi',n:'El Badi Palace',c:'Marrakesh',t:'Ruined palace with storks on the walls.',q:'El Badi Palace Marrakech'},
+ {id:'i-saadian',n:'Saadian Tombs',c:'Marrakesh',t:'Small, ornate and quick to visit.',q:'Saadian Tombs Marrakech'},
+ {id:'i-secret',n:'Le Jardin Secret',c:'Marrakesh',t:'Calm palace gardens in the medina.',q:'Le Jardin Secret Marrakech'},
+ {id:'i-ysl',n:'Yves Saint Laurent Museum',c:'Marrakesh',t:'Next to Majorelle. Book a timed ticket.',q:'Musee Yves Saint Laurent Marrakech'},
+ {id:'i-ourika',n:'Ourika Valley and Setti Fatma falls',c:'Marrakesh',t:'Half day trip, about an hour each way. Uneven paths, so it is a tougher one.',q:'Setti Fatma waterfalls Ourika Valley'},
+ {id:'i-oudayas',n:'Andalusian Gardens, Oudayas',c:'Rabat',t:'A quiet garden inside the Kasbah.',q:'Andalusian Gardens Kasbah of the Udayas Rabat'},
+ {id:'i-consuls',n:'Rue des Consuls',c:'Rabat',t:'Crafts street in the medina.',q:'Rue des Consuls Rabat'},
+ {id:'i-theatre',n:'Grand Th\u00E9\u00E2tre de Rabat',c:'Rabat',t:'A Zaha Hadid building, striking at night.',q:'Grand Theatre de Rabat'}
+];
+var CITIES=['Agadir','Marrakesh','Rabat','Casablanca'];
+var CATS=['Restaurants','Cafes','Things to do','Beaches','Hammams'];
+
+/* ================= who sees what ================= */
+function me(){return PEOPLE[S.me]?S.me:'h';}
+function grp(){return PEOPLE[me()].g;}
+function fl(){return PEOPLE[me()].f;}
+function seen(o){return !o.who||o.who.indexOf(me())>=0;}
+function pk(o,f){
+  if(o.ov){for(var k in o.ov){if(k.indexOf(me())>=0&&Object.prototype.hasOwnProperty.call(o.ov[k],f))return o.ov[k][f];}}
+  return o[f];
+}
+function you(t){
+  if(me()!=='v'||!t)return t;
+  var R=[[/Not for Vaishnavi/g,'Not for you'],[/If Vaishnavi is/g,'If you are'],[/Vaishnavi sits it out/g,'You sit it out'],[/for Vaishnavi/g,'for you'],[/For Vaishnavi/g,'For you'],
+    [/Let her rest after the early start\./g,'Rest after the early start.'],[/her travel/g,'your travel'],
+    [/If she wants/g,'If you want'],[/If she is/g,'If you are'],[/if she is/g,'if you are'],[/she has/g,'you have'],
+    [/She can/g,'You can'],[/She stays/g,'You stay'],[/not for her/g,'not for you'],
+    [/\bshe\b/g,'you'],[/\bShe\b/g,'You'],[/\bher\b/g,'your']];
+  R.forEach(function(r){t=t.replace(r[0],r[1]);});
+  return t;
+}
+function pinOf(s){
+  if(s.q)return s.q;
+  var ls=s.links||[];
+  for(var i=0;i<ls.length;i++){
+    var u=ls[i][1];
+    if(u.indexOf('google.com/maps/search')>-1){try{return decodeURIComponent(u.split('query=')[1]);}catch(e){}}
+  }
+  return '';
+}
+function shortFor(t){return t==='Hritik and Gurleen'?'H + G':(t==='Vaishnavi and Rahul'?'V + R':t);}
+
+/* ================= stops (built in + added by anyone) ================= */
+function tOf(s){var e=KV['time:'+s.id];if(e&&e.v)return e.v;return (s.c?s.t:pk(s,'t'))||'';}
+function stopsFor(i){
+  var base=DAYS[i].stops.filter(seen);
+  var cs=[];
+  Object.keys(KV).forEach(function(k){
+    if(k.indexOf('stop:')!==0)return;
+    var v=KV[k].v;
+    if(!v||v.del||v.day!==i)return;
+    var st={id:v.id,c:true,t:v.t||'',title:v.title,sum:v.note||'',tag:v.tag||'sight',q:v.q||'',who:v.who||'hgvra',addedBy:KV[k].by};
+    if(seen(st))cs.push(st);
+  });
+  cs.sort(function(a,b){return mins(a.t)-mins(b.t);});
+  cs.forEach(function(c){
+    var ct=mins(c.t),idx=base.length;
+    if(ct<9999){for(var j=0;j<base.length;j++){var bt=mins(tOf(base[j]));if(bt<9999&&bt>ct){idx=j;break;}}}
+    base.splice(idx,0,c);
+  });
+  return base;
+}
+
+function routeUrl(i){
+  var pts=[];
+  stopsFor(i).forEach(function(s){
+    if(kb('skip:'+s.id))return;
+    var q=pinOf(s);
+    if(q&&pts[pts.length-1]!==q)pts.push(q);
+  });
+  if(pts.length<2)return pts.length?mapUrl(pts[0]):mapUrl('Morocco');
+  if(pts.length>10){var keep=[pts[0]];var mid=pts.slice(1,-1);var step=Math.ceil(mid.length/8);for(var j=0;j<mid.length;j+=step)keep.push(mid[j]);keep.push(pts[pts.length-1]);pts=keep;}
+  var u='https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(pts[0])+'&destination='+encodeURIComponent(pts[pts.length-1])+'&travelmode=driving';
+  var w=pts.slice(1,-1);
+  if(w.length)u+='&waypoints='+encodeURIComponent(w.join('|'));
+  return u;
+}
+
+function stopHTML(s){
+  var id=s.id,done=kb('done:'+id),skip=kb('skip:'+id),open=!!S.open[id];
+  var t=tOf(s),tg=TAGS[s.tag]||TAGS.sight;
+  var title=pk(s,'title'),sum=pk(s,'sum')||'',more=pk(s,'more')||'',care=you(pk(s,'care')||'');
+  var pin=pinOf(s);
+  var links=(s.links||[]).map(function(l){return '<a class="lnk" href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';}).join('');
+  var meta=[];
+  if(done&&kby('done:'+id))meta.push('Done by '+kby('done:'+id));
+  if(KV['time:'+id]&&kby('time:'+id))meta.push('Time set by '+kby('time:'+id));
+  if(s.c&&s.addedBy&&PEOPLE[s.addedBy])meta.push('Added by '+PEOPLE[s.addedBy].name);
+  var lab=me()==='v'?'For you:':'Vaishnavi:';
+  return '<article class="stop k-'+tg[2]+(done?' done':'')+(skip?' skip':'')+(open?' open':'')+'" data-sid="'+id+'">'+
+    '<button class="chk" data-act="done" data-id="'+id+'" aria-label="Mark as done" aria-pressed="'+done+'"></button>'+
+    '<div class="mid" data-act="toggle" data-id="'+id+'">'+
+      '<div class="l1"><label class="tmw"><span class="tv">'+(t?esc(t):'Set time')+'</span><input class="tin" type="time" value="'+esc(t)+'" data-id="'+id+'" aria-label="Time"></label>'+
+      '<span class="ico" title="'+tg[0]+'">'+tg[1]+'</span>'+(s['for']?'<span class="for">'+esc(shortFor(s['for']))+'</span>':'')+(care?'<span class="carepill">Care</span>':'')+(s.opt?'<span class="optpill">Optional</span>':'')+'</div>'+
+      '<h3>'+title+'</h3>'+
+      (sum?'<p class="s1">'+sum+'</p>':'')+
+    '</div>'+
+    (pin?'<a class="pin" href="'+esc(mapUrl(pin))+'" target="_blank" rel="noopener" aria-label="Open in Google Maps">\uD83D\uDCCD</a>':'<span></span>')+
+    '<div class="more">'+
+      (sum?'<p class="sfull">'+sum+'</p>':'')+more+
+      (care?'<div class="care"><b>'+lab+'</b> '+care+'</div>':'')+
+      ((links||pin)?'<div class="links">'+(pin?'<a class="lnk red" href="'+esc(mapUrl(pin))+'" target="_blank" rel="noopener">Open in Maps</a>':'')+links+'</div>':'')+
+      (meta.length?'<p class="meta">'+esc(meta.join('. '))+'</p>':'')+
+      '<div class="acts">'+(s.c?'<button class="ghost" data-act="delstop" data-id="'+id+'">Remove for everyone</button>':'<button class="ghost" data-act="skip" data-id="'+id+'">'+(skip?'Put it back':'Skip this one')+'</button>')+'</div>'+
+    '</div></article>';
+}
+
+/* ================= shared building blocks ================= */
+function secHead(tab,extra){
+  return '<div class="sech"><span class="ar">'+SEC_AR[tab]+'</span><h1>'+SEC_EN[tab]+'</h1>'+(extra||'')+'</div>';
+}
+function checkRow(key,text,sub,opts){
+  opts=opts||{};
+  var v=kv(key),on=!!v;
+  var when='';
+  if(on&&opts.stamp&&typeof v==='number')when=' Ticked at '+new Date(v).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+  var who=(on&&opts.shared&&kby(key))?' '+kby(key)+' ticked this.':'';
+  return '<div class="check'+(on?' on':'')+'" data-act="tick" data-k="'+esc(key)+'" data-stamp="'+(opts.stamp?1:0)+'" role="checkbox" aria-checked="'+on+'" tabindex="0">'+
+    '<span class="box"></span><span class="ct">'+esc(text)+((sub||when||who)?'<small>'+esc((sub||'')+when+who)+'</small>':'')+'</span></div>';
+}
+function kvHTML(kvs){return '<dl class="kv">'+kvs.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>';}).join('')+'</dl>';}
+function linksHTML(ls){return '<div class="links">'+ls.map(function(l,i){return '<a class="lnk'+(i===0?' red':'')+'" href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+'</a>';}).join('')+'</div>';}
+function acc(title,inner,open,sub){
+  return '<details class="acc"'+(open?' open':'')+'><summary><span>'+title+'</span>'+(sub?'<small>'+sub+'</small>':'')+'</summary><div class="accin">'+inner+'</div></details>';
+}
+
+/* ================= PLAN ================= */
+function countdownText(){
+  var now=new Date(),w=WINDOW[fl()];
+  if(now<w[0]){
+    var sd=new Date(w[0]);
+    var sday=Date.UTC(sd.getUTCFullYear(),sd.getUTCMonth(),sd.getUTCDate());
+    var today=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate());
+    var d=Math.round((sday-today)/864e5);
+    return d<=0?'Flying today':(d===1?'1 day to go':d+' days to go');
+  }
+  return now<w[1]?'You are on the trip':'Trip done';
+}
+function clockText(){
+  var now=new Date(),p=PEOPLE[me()];
+  var f=function(tz){try{return now.toLocaleTimeString('en-GB',{timeZone:tz,hour:'2-digit',minute:'2-digit'});}catch(e){return '--:--';}};
+  return 'Morocco '+f('UTC')+'  '+p.tzn+' '+f(p.tz);
+}
+
+function renderPlan(){
+  var d=DAYS[S.day],p=PEOPLE[me()],r=ROUTES[grp()];
+  var list=stopsFor(S.day);
+  var total=0,done=0;
+  list.forEach(function(s){if(kb('skip:'+s.id))return;total++;if(kb('done:'+s.id))done++;});
+  var route='<div class="route">';
+  r.nodes.forEach(function(n,i){
+    if(i)route+='<i class="rl"></i>';
+    route+='<div class="rn"><b class="ar">'+n[1]+'</b><span>'+n[0]+'</span><small>'+n[2]+'</small></div>';
+  });
+  route+='</div>';
+  var pills=DAYS.map(function(x,i){
+    return '<button class="pill'+(i===S.day?' on':'')+'" role="tab" data-act="day" data-i="'+i+'" aria-selected="'+(i===S.day)+'"><b class="ar">'+x.ar+'</b><span>'+x.dow+' '+x.dn+'</span><small>'+pk(x,'pl')+'</small></button>';
+  }).join('');
+  var alert=you(pk(d,'alert'));
+  var sun=pk(d,'sun'),wx=pk(d,'wx');
+  var h='<div class="hello"><div class="hi"><span class="ar">\u0645\u0631\u062D\u0628\u0627</span> <b>'+esc(p.name)+'</b></div>'+
+    '<div class="chips"><span class="chip" id="cd">'+countdownText()+'</span><span class="chip" id="ck">'+clockText()+'</span></div></div>'+
+    route+
+    '<div class="days" role="tablist" aria-label="Days">'+pills+'</div>'+
+    '<div class="dayhead"><span class="ar">'+d.ar+'</span><h2>'+pk(d,'title')+'</h2><p>'+pk(d,'sub')+'</p>'+
+    ((sun||wx)?'<div class="facts">'+(sun?'<span>\u2600\uFE0F '+sun.replace('Sunset about ','Sunset ')+'</span>':'')+(wx?'<span>'+wx+'</span>':'')+'</div>':'')+'</div>'+
+    (alert?'<button class="alert" data-act="openself"><b>!</b><span>'+alert+'</span></button>':'')+
+    '<div class="bar2"><a class="btn red" href="'+esc(routeUrl(S.day))+'" target="_blank" rel="noopener">\uD83D\uDDFA\uFE0F Day route</a>'+
+    '<button class="btn" data-act="addstop">\uFF0B Add stop</button><span class="cnt">'+done+' of '+total+'</span></div>'+
+    '<div class="stops">'+list.map(stopHTML).join('')+'</div>';
+  $('#tab-plan').innerHTML=h;
+}
+
+/* ================= PLACES ================= */
+function placeList(){
+  var out=[];
+  Object.keys(KV).forEach(function(k){
+    if(k.indexOf('place:')!==0)return;
+    var v=KV[k].v;if(!v||v.del)return;
+    var votes=0,mine=false;
+    ORDER.forEach(function(pp){if(kb('vote:'+v.id+':'+pp)){votes++;if(pp===me())mine=true;}});
+    out.push({p:v,by:KV[k].by,votes:votes,mine:mine,at:KV[k].at});
+  });
+  out.sort(function(a,b){return b.votes-a.votes||Date.parse(b.at)-Date.parse(a.at);});
+  return out;
+}
+function placeQuery(p){return p.u&&/^https?:\/\//.test(p.u)?p.u:mapUrl(p.n+' '+p.c);}
+
+function renderPlaces(){
+  var saved=placeList();
+  var savedIds={};saved.forEach(function(x){savedIds[x.p.id]=1;});
+  var chipsC=CITIES.map(function(c){return '<button class="cchip'+(S.city===c?' on':'')+'" data-act="pcity" data-c="'+c+'">'+c+'</button>';}).join('');
+  var chipsK=CATS.map(function(c){return '<button class="cchip'+(S.cat===c?' on':'')+'" data-act="pcat" data-c="'+c+'">'+c+'</button>';}).join('');
+  var q=((S.pq||'')+' '+(S.cat||'')+' '+S.city).replace(/\s+/g,' ').trim();
+  var h=secHead('places')+
+   '<div class="panel"><h3>Search Google Maps</h3>'+
+   '<div class="chiprow">'+chipsC+'</div><div class="chiprow">'+chipsK+'</div>'+
+   '<div class="srow"><input class="tx" id="pq" placeholder="Rooftop, hammam, seafood..." value="'+esc(S.pq)+'" autocomplete="off"><button class="btn" data-act="psearch">Search</button></div>'+
+   (S.embed?'<iframe class="mapf" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q='+encodeURIComponent(S.embed)+'&output=embed" title="Map results"></iframe>'+
+     '<div class="bar2"><a class="btn red" href="'+esc(mapUrl(S.embed))+'" target="_blank" rel="noopener">Open results in Google Maps</a></div>':'<p class="note">Pick a city, type what you fancy, and the map appears here. Then add what you like below.</p>')+
+   '</div>'+
+   '<div class="panel"><h3>Add a place</h3>'+
+   '<input class="tx" id="ap-n" placeholder="Name of the place" autocomplete="off">'+
+   '<div class="two"><select class="tx" id="ap-c">'+CITIES.map(function(c){return '<option'+(c===S.city?' selected':'')+'>'+c+'</option>';}).join('')+'</select>'+
+   '<input class="tx" id="ap-t" placeholder="Why go? (optional)" autocomplete="off"></div>'+
+   '<input class="tx" id="ap-u" placeholder="Google Maps link (optional)" autocomplete="off">'+
+   '<button class="btn" data-act="addplace" style="margin-top:8px">Add for everyone</button></div>'+
+   '<h2 class="sub2">Saved places <small>everyone sees these</small></h2>';
+  if(!saved.length)h+='<p class="note pad">Nothing saved yet. Add one above or save an idea below.</p>';
+  saved.forEach(function(x){
+    var p=x.p;
+    h+='<div class="place"><div class="pl1"><b>'+esc(p.n)+'</b><span class="cty">'+esc(p.c)+'</span></div>'+
+      (p.t?'<p class="pt">'+esc(p.t)+'</p>':'')+
+      '<div class="pact"><a class="mini red" href="'+esc(placeQuery(p))+'" target="_blank" rel="noopener">\uD83D\uDCCD Maps</a>'+
+      '<button class="mini'+(x.mine?' on':'')+'" data-act="vote" data-id="'+p.id+'">\uD83D\uDC4D '+x.votes+'</button>'+
+      '<button class="mini" data-act="toplan" data-id="'+p.id+'">\uFF0B Plan</button>'+
+      '<button class="mini" data-act="delplace" data-id="'+p.id+'" aria-label="Remove">\u2715</button></div>'+
+      (x.by&&PEOPLE[x.by]?'<p class="meta">Added by '+PEOPLE[x.by].name+'</p>':'')+'</div>';
+  });
+  var ideas=IDEAS.filter(function(i){return !savedIds[i.id];});
+  if(ideas.length){
+    h+='<h2 class="sub2">Ideas <small>picked for this trip</small></h2>';
+    ideas.forEach(function(i){
+      h+='<div class="place idea"><div class="pl1"><b>'+esc(i.n)+'</b><span class="cty">'+esc(i.c)+'</span></div><p class="pt">'+esc(i.t)+'</p>'+
+        '<div class="pact"><a class="mini red" href="'+esc(mapUrl(i.q))+'" target="_blank" rel="noopener">\uD83D\uDCCD Maps</a>'+
+        '<button class="mini" data-act="saveidea" data-id="'+i.id+'">\uFF0B Save</button></div></div>';
+    });
+  }
+  $('#tab-places').innerHTML=h;
+}
+
+/* ================= TEAM ================= */
+function flightsHTML(g){
+  var f=FLIGHTS.filter(function(x){return x.g===g;})[0];
+  if(!f)return '';
+  return f.legs.map(function(l){
+    return '<div class="leg"><b class="code">'+l.code+'</b><div class="lr"><div class="rt">'+l.rt+'</div><div class="tm2">'+l.d+'  \u00B7  '+l.dep+' to '+l.arr+'</div>'+(l.nt?'<div class="nt">'+l.nt+'</div>':'')+'</div></div>';
+  }).join('');
+}
+function careInner(){
+  var v=me()==='v';
+  return '<p class="note"><b>Before you go.</b> This page does not know how far along '+(v?'you are':'she is')+', so it is worth checking with '+(v?'your':'her')+' doctor or midwife that '+(v?'you are':'she is')+' fine to travel, that '+(v?'your':'her')+' travel insurance covers pregnancy abroad, and what should send '+(v?'you':'her')+' straight to a clinic. From week 28 Ryanair wants a fit to fly letter dated within 2 weeks of each flight.</p>'+
+   '<p class="note"><b>On the plan.</b> The rides are for the others: no quads, camels, balloon or surf'+(v?'':' for her')+', and a hammam without the hot steam room. The desert is scenery, food and sunset.</p>'+
+   '<p class="note"><b>Food and drink.</b> Hot, cooked through food, bottled water, peeled fruit only. No ice, raw salad, unpasteurised dairy, or raw and undercooked meat, fish or eggs.</p>'+
+   '<p class="note"><b>Heat and rest.</b> High 20s in October. Water, hat, shade, an afternoon rest, and a walk about every 90 minutes on long drives and flights.</p>'+
+   '<p class="note"><b>'+(v?'If you feel unwell':'If she feels unwell')+'.</b> Call the travel insurer\'s 24 hour line first. Ambulance and fire is 15. Ratings are from Google, and Rabat reviews are mixed.</p>'+
+   CLINICS.map(function(c){return '<div class="clinic"><b>'+esc(c[1])+'</b> <span class="note">('+c[0]+')</span><div class="note">'+esc(c[2])+'</div>'+linksHTML([M('Map',c[1]+' '+c[0]),T('Call',c[3])])+'</div>';}).join('');
+}
+function renderTeam(){
+  var g=fl(),p=PEOPLE[me()];
+  var tz={
+    hg:'Times are local. Morocco is on GMT, one hour behind the UK until 25 October.',
+    vr:'Times are local. Morocco is on GMT, one hour behind Ireland until 25 October.',
+    a:'Times are local. Morocco is 3 hours behind Bahrain and 5 hours 30 behind India.'
+  }[g];
+  var h=secHead('team')+
+   '<h2 class="sub2">Your flights <small>'+esc(p.name)+'</small></h2><p class="note pad">'+tz+'</p>'+flightsHTML(g)+
+   '<div class="two2"><div class="panel"><h3>Thu 8 Oct</h3><ul class="tl"><li><b>07:20</b>Aman lands, Casablanca</li><li><b>09:15</b>Vaishnavi and Rahul land, Agadir</li><li><b>16:00</b>Riad in Marrakesh</li></ul></div>'+
+   '<div class="panel"><h3>Mon 12 Oct</h3><ul class="tl"><li><b>09:00</b>Aman leaves, Casablanca</li><li><b>10:40</b>Vaishnavi and Rahul leave, Rabat</li><li><b>20:30</b>Hritik and Gurleen leave, Rabat</li></ul></div></div>'+
+   acc('Looking after Vaishnavi'.replace('Vaishnavi',me()==='v'?'you':'Vaishnavi'),careInner(),false,'Health and clinics')+
+   acc('To confirm',CONFIRM.map(function(c,i){return seen({who:c[2]})?checkRow('conf:'+i,you(c[0]),you(c[1]),{shared:true}):'';}).join(''),true,'Ticks are shared')+
+   acc('Everyone else\'s flights',FLIGHTS.filter(function(f){return f.g!==g;}).map(function(f){return '<div class="who">'+f.who+'</div>'+flightsHTML(f.g);}).join(''),false);
+  $('#tab-team').innerHTML=h;
+}
+
+/* ================= STAY ================= */
+function carSection(prefix,title,items,field){
+  var fu=kv('carf:'+field+':fuel')||'',km=kv('carf:'+field+':km')||'',nt=kv('carf:'+field+':note')||'';
+  var h='<div class="panel"><h3>'+title+'</h3><div class="two"><input class="tx" data-cf="'+field+':fuel" placeholder="Fuel level" value="'+esc(fu)+'"><input class="tx" data-cf="'+field+':km" placeholder="Mileage" value="'+esc(km)+'"></div>';
+  h+=items.map(function(t,i){return checkRow('carT:'+prefix+':'+i,t,'',{stamp:true,shared:true});}).join('');
+  h+='<textarea class="tx" data-cf="'+field+':note" placeholder="Damage notes: front left bumper scuff, rear screen chip...">'+esc(nt)+'</textarea></div>';
+  return h;
+}
+function renderStay(){
+  var h=secHead('stay');
+  STAYS.filter(seen).forEach(function(s){
+    h+=acc(esc(s.n),'<p class="when2">'+s.w+'</p>'+kvHTML(s.kv)+linksHTML(s.links),false,s.w);
+  });
+  h+='<h2 class="sub2">Bookings and airports</h2>';
+  BOOKINGS.filter(seen).forEach(function(s){
+    h+=acc(esc(s.n),'<p class="when2">'+s.w+'</p>'+kvHTML(s.kv)+linksHTML(s.links),false,s.w);
+  });
+  var legs=LEGS.filter(function(l){return !l[4]||l[4].indexOf(me())>=0;});
+  var car='<table class="legs"><tbody>'+legs.map(function(l){return '<tr><td>'+l[0]+'<small>'+l[3]+'</small></td><td>'+l[1]+'</td><td>'+l[2]+'</td></tr>';}).join('')+'</tbody></table><p class="note">Rough estimates. Check live traffic.</p>';
+  if(fl()==='hg'){
+    car+='<p class="note">Police checkpoints are common. Slow down, be polite, and keep passport, licence and car papers to hand. Radar traps are frequent, some vehicles have no lights at night, and motorways are toll so keep small dirhams.</p>'+
+      carSection('cp','Pick up in Agadir',CAR_PICK,'pick')+carSection('cd','Drop off in Rabat',CAR_DROP,'drop');
+  }else{
+    car+='<p class="note">Hritik and Gurleen are driving the Avis car from Agadir airport to Rabat. Keep your passport on you for checkpoints, and say when you want a break.</p>';
+  }
+  h+=acc('Car and drive times',car,false,'Distances, checks');
+  h+='<h2 class="sub2">Emergency numbers</h2><div class="sos"><a href="tel:19"><b>19</b>Police</a><a href="tel:177"><b>177</b>Road police</a><a href="tel:15"><b>15</b>Ambulance</a></div>';
+  $('#tab-stay').innerHTML=h;
+}
+
+/* ================= MONEY ================= */
+function fmtNum(v){return isFinite(v)?String(Math.round(v*100)/100):'';}
+function parseNum(x){var v=parseFloat(String(x).replace(/,/g,'.').replace(/[^0-9.]/g,''));return isNaN(v)?NaN:v;}
+function convertFrom(code,val){
+  var base=val/S.rates[code];
+  CUR.forEach(function(c){
+    if(c[0]===code)return;
+    var el=document.getElementById('cv-'+c[0]);
+    if(el)el.value=isFinite(base)?fmtNum(base*S.rates[c[0]]):'';
+  });
+}
+function quadTable(){
+  var cols=CURORDER[fl()].filter(function(c){return c!=='MAD';});
+  var hd=$('#qh');if(hd)hd.innerHTML='<th>Price</th>'+cols.map(function(c){return '<th>'+c+'</th>';}).join('');
+  var rows=[20,50,100,200,500,1000].map(function(m){
+    var g=m/S.rates.MAD;
+    return '<tr><td>'+m+' MAD</td>'+cols.map(function(c){
+      var v=g*S.rates[c];
+      return '<td>'+SYM[c]+(c==='INR'?Math.round(v).toLocaleString('en-GB'):(Math.round(v*100)/100))+'</td>';
+    }).join('')+'</tr>';
+  }).join('');
+  var el=$('#qt');if(el)el.innerHTML=rows;
+}
+function renderMoney(){
+  var g=fl();
+  var ord=CURORDER[g].map(function(code){return CUR.filter(function(c){return c[0]===code;})[0];});
+  var note={hg:'UK cards: check the foreign transaction fee.',vr:'Irish cards: check the foreign transaction fee.',a:'Indian cards: switch on international use and check the daily ATM limit.'}[g];
+  var h=secHead('money')+'<div class="panel"><h3>Converter</h3><div class="cur">';
+  ord.forEach(function(c){h+='<label for="cv-'+c[0]+'">'+c[0]+'<small>'+c[1]+'</small></label><input class="tx" id="cv-'+c[0]+'" data-cv="'+c[0]+'" inputmode="decimal" autocomplete="off" placeholder="0">';});
+  h+='</div></div>'+
+   acc('Rates for \u00A31','<p class="note">A snapshot of mid market rates on Sunday 20 September 2026. This page cannot pull live rates, and cash desks, cards and ATMs give you less. Edit these to match your bank.</p>'+
+     '<div class="three">'+['EUR','INR','MAD'].map(function(c){return '<div><label class="lb" for="rt-'+c+'">'+c+'</label><input class="tx" id="rt-'+c+'" data-rate="'+c+'" inputmode="decimal" value="'+S.rates[c]+'"></div>';}).join('')+'</div>'+
+     '<button class="btn alt" data-act="ratereset" style="margin-top:10px">Back to the 20 Sep rates</button>',false,'20 Sep 2026')+
+   '<div class="panel"><h3>Dirhams at a glance</h3><table class="q"><thead><tr id="qh"></tr></thead><tbody id="qt"></tbody></table></div>'+
+   acc('Cash in Morocco','<p class="note">Dirhams are hard to buy before you fly, so use an airport ATM when you land, and say no if it offers to charge you in your own currency. Keep small notes for tolls, parking, tips and taxis, and change leftovers before you fly home.</p><p class="note">'+note+'</p>',false)+
+   acc('Words that help',
+     '<p class="note">Darija is spelled many ways in Latin letters. Say it slowly. French works almost everywhere.</p>'+
+     PHRASES.map(function(p,i){return '<div class="ph"><div class="phx"><b>'+esc(p[0])+'</b><span>'+esc(p[1])+'</span><small>'+esc(p[2])+'</small></div><button class="mini" data-act="say" data-i="'+i+'">Hear French</button></div>';}).join(''),true,'\u0627\u0644\u062F\u0627\u0631\u062C\u0629');
+  $('#tab-money').innerHTML=h;
+  var last=S.last||CURSTART[g];
+  var el=document.getElementById('cv-'+last.code);if(el)el.value=fmtNum(last.val);
+  convertFrom(last.code,last.val);
+  quadTable();
+}
+
+/* ================= PACK ================= */
+function renderPack(){
+  var h=secHead('pack')+'<p class="note pad">Your list. Only you see these ticks.</p>';
+  PACK.forEach(function(g,gi){
+    if(!seen(g))return;
+    h+=acc(you(g.n),g.items.map(function(t,i){return checkRow('pack:'+me()+':'+gi+':'+i,you(t),'',{});}).join(''),gi<2,g.items.length+' things');
+  });
+  h+='<div class="panel"><h3>Notes</h3><textarea class="tx" id="notes" placeholder="Restaurant names, prices, anything to remember...">'+esc(kv('note:'+me())||'')+'</textarea><p class="note">Saved for you and synced to your other devices.</p></div>';
+  $('#tab-pack').innerHTML=h;
+}
+
+/* ================= ASK CLAUDE ================= */
+var QUICK=['What should we do if it rains in Marrakesh?','Vegetarian dinner near Jemaa el-Fna','Best time to leave Agafay for Rabat?','Rabat plan if we skip the beach'];
+function buildContext(){
+  var p=PEOPLE[me()];
+  var L=['Asking: '+p.name+(grp()==='a'?' (travelling separately via Casablanca)':' (main group)')];
+  DAYS.forEach(function(d,i){
+    L.push(d.dow+' '+d.dn+' Oct, '+pk(d,'title')+':');
+    stopsFor(i).forEach(function(s){if(kb('skip:'+s.id))return;L.push('  '+tOf(s)+' '+String(pk(s,'title')).replace(/<[^>]+>/g,''));});
+  });
+  var pl=placeList();
+  if(pl.length){L.push('Saved places:');pl.slice(0,15).forEach(function(x){L.push('  '+x.p.n+' ('+x.p.c+')'+(x.votes?' '+x.votes+' votes':''));});}
+  return L.join('\n').slice(0,6000);
+}
+function fmtMsg(t){
+  var places=[];
+  var body=String(t).split('\n').filter(function(line){
+    var m=line.match(/^PLACE:\s*(.+)$/);
+    if(m){var parts=m[1].split('|').map(function(x){return x.trim();});places.push({n:parts[0],c:parts[1]||S.city,t:parts[2]||''});return false;}
+    return true;
+  }).join('\n').trim();
+  var html=esc(body).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
+  return {html:html,places:places};
+}
+function renderChat(){
+  var el=$('#chatlog');if(!el)return;
+  var h='';
+  if(!S.chat.length){
+    h='<div class="bub a"><p>Ask me anything about the trip. I know your plan and what the group has saved.</p></div>';
+  }
+  S.chat.forEach(function(m,mi){
+    if(m.r==='u'){h+='<div class="bub u"><p>'+esc(m.t)+'</p></div>';return;}
+    var f=fmtMsg(m.t);
+    h+='<div class="bub a'+(m.err?' err':'')+'"><p>'+f.html+'</p>'+
+      f.places.map(function(p,pi){return '<button class="mini" data-act="chatsave" data-m="'+mi+'" data-p="'+pi+'">\uFF0B Save '+esc(p.n)+'</button>';}).join('')+'</div>';
+  });
+  if(S.busy)h+='<div class="bub a"><p class="dots">Thinking</p></div>';
+  el.innerHTML=h;
+  el.scrollTop=el.scrollHeight;
+  var b=$('#chatgo');if(b)b.disabled=S.busy;
+}
+function renderAsk(){
+  var on=synced()&&CFG.fn;
+  var h=secHead('ask')+
+   (on?'':'<div class="warn"><b>!</b><span>The assistant is not switched on yet. It needs the setup in SETUP.md.</span></div>')+
+   '<div class="chat"><div id="chatlog"></div></div>'+
+   '<div class="chiprow q">'+QUICK.map(function(q,i){return '<button class="cchip" data-act="quick" data-i="'+i+'">'+q+'</button>';}).join('')+'</div>'+
+   '<div class="srow"><input class="tx" id="chatIn" placeholder="Ask about food, timings, plan B..." autocomplete="off"><button class="btn" id="chatgo" data-act="chatsend">Send</button></div>';
+  $('#tab-ask').innerHTML=h;
+  renderChat();
+}
+function sendChat(text){
+  text=String(text||'').trim();
+  if(!text||S.busy)return;
+  S.chat.push({r:'u',t:text});
+  S.busy=true;renderChat();
+  var inp=$('#chatIn');if(inp)inp.value='';
+  var finish=function(t,err){S.busy=false;S.chat.push({r:'a',t:t,err:err?1:0});S.chat=S.chat.slice(-30);LS.set('chat',S.chat);renderChat();};
+  if(!synced()||!CFG.fn){finish('The assistant is not switched on yet. It needs the setup in SETUP.md.',true);return;}
+  var msgs=S.chat.filter(function(m){return !m.err;}).slice(-10).map(function(m){return {role:m.r==='u'?'user':'assistant',content:m.t};});
+  while(msgs.length&&msgs[0].role!=='user')msgs.shift();
+  fetch(CFG.url+'/functions/v1/'+CFG.fn,{
+    method:'POST',
+    headers:{'Content-Type':'application/json',apikey:CFG.key,Authorization:'Bearer '+CFG.key},
+    body:JSON.stringify({messages:msgs,person:PEOPLE[me()].name,context:buildContext()})
+  }).then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});}).then(function(x){
+    if(x.ok&&x.j&&x.j.text)finish(x.j.text,false);
+    else finish('I could not reach the assistant just now.'+(x.j&&x.j.error?' '+x.j.error:''),true);
+  }).catch(function(){finish('I could not reach the assistant just now. Check the signal and try again.',true);});
+}
+
+/* ================= sheets, hero, tabs ================= */
+function showSheet(o){S.sheet=o;renderSheet();$('#sheetwrap').classList.add('show');}
+function hideSheet(){S.sheet=null;$('#sheetwrap').classList.remove('show');$('#sheetwrap').innerHTML='';}
+function renderSheet(){
+  var o=S.sheet;if(!o)return;
+  var day=o.day==null?S.day:o.day;
+  var g=grp()==='a'?'a':'hgvr';
+  var h='<div class="scrim" data-act="sheetclose"></div><div class="sheet"><div class="grab"></div><h3>Add a stop</h3>'+
+   '<input class="tx" id="sh-title" placeholder="What are you doing?" value="'+esc(o.title||'')+'" autocomplete="off">'+
+   '<div class="two"><select class="tx" id="sh-day">'+DAYS.map(function(d,i){return '<option value="'+i+'"'+(i===day?' selected':'')+'>'+d.dow+' '+d.dn+' Oct</option>';}).join('')+'</select>'+
+   '<input class="tx" id="sh-time" type="time" value="'+esc(o.t||'')+'"></div>'+
+   '<input class="tx" id="sh-q" placeholder="Place to find on Google Maps" value="'+esc(o.q||'')+'" autocomplete="off">'+
+   '<div class="two"><select class="tx" id="sh-tag">'+['food','sight','adv','chill','stay','drive'].map(function(t){return '<option value="'+t+'"'+(t===(o.tag||'sight')?' selected':'')+'>'+TAGS[t][0]+'</option>';}).join('')+'</select>'+
+   '<select class="tx" id="sh-who"><option value="hgvra">Everyone</option><option value="'+g+'">My group</option><option value="'+me()+'">Only me</option></select></div>'+
+   '<input class="tx" id="sh-note" placeholder="Note (optional)" value="'+esc(o.note||'')+'" autocomplete="off">'+
+   '<div class="bar2"><button class="btn alt" data-act="sheetsearch">Search Google Maps</button><button class="btn red" data-act="sheetsave">Add to plan</button></div></div>';
+  $('#sheetwrap').innerHTML=h;
+}
+
+function renderHero(){
+  var p=PEOPLE[me()];
+  var av=$('#whoBtn');if(av){av.textContent=p.name.charAt(0);av.setAttribute('aria-label','Signed in as '+p.name+'. Tap to change.');}
+  setStatus(online);
+}
+function renderTab(t){
+  ({plan:renderPlan,places:renderPlaces,team:renderTeam,stay:renderStay,money:renderMoney,pack:renderPack,ask:renderAsk})[t]();
+}
+function refresh(){renderTab(S.tab);}
+function renderAll(){renderHero();renderTab(S.tab);}
+function showTab(t){
+  S.tab=t;
+  $$('.tab').forEach(function(x){x.classList.toggle('active',x.id==='tab-'+t);});
+  $$('#dock button').forEach(function(b){b.setAttribute('aria-selected',b.getAttribute('data-tab')===t?'true':'false');});
+  renderTab(t);
+  window.scrollTo(0,0);
+}
+function renderWho(){
+  var h='<div class="who-in"><b class="ar big">\u0627\u0644\u0645\u063A\u0631\u0628</b><h2>Morocco 2026</h2><p class="who-q">Who is using this?</p>';
+  ORDER.forEach(function(k){h+='<button class="who-b" data-act="pick" data-me="'+k+'"><b>'+PEOPLE[k].name+'</b><span>'+PEOPLE[k].sub+'</span></button>';});
+  if(PEOPLE[S.me])h+='<button class="who-x" data-act="whoclose">Keep viewing as '+PEOPLE[S.me].name+'</button>';
+  h+='<p class="who-n">Your plan, flights and notes change to match you. This choice is saved on this phone only.</p></div>';
+  $('#who').innerHTML=h;
+}
+function showWho(){renderWho();$('#who').classList.add('show');}
+function hideWho(){$('#who').classList.remove('show');}
+function pickToday(){
+  var iso=new Date().toISOString().slice(0,10);
+  S.day=0;
+  for(var i=0;i<DAYS.length;i++){if(DAYS[i].key===iso){S.day=i;break;}}
+}
+function tickHeader(){
+  var a=$('#cd'),b=$('#ck');
+  if(a)a.textContent=countdownText();
+  if(b)b.textContent=clockText();
+}
+
+/* ================= events ================= */
+document.addEventListener('click',function(e){
+  if(e.target.closest('input,textarea,select,a,label'))return;
+  var el=e.target.closest('[data-act]');if(!el)return;
+  var act=el.getAttribute('data-act'),id=el.getAttribute('data-id');
+  var v;
+  if(act==='tab'){showTab(el.getAttribute('data-tab'));}
+  else if(act==='day'){S.day=parseInt(el.getAttribute('data-i'),10);renderPlan();}
+  else if(act==='done'){kvSet('done:'+id,kb('done:'+id)?0:1);renderPlan();}
+  else if(act==='toggle'){S.open[id]=!S.open[id];var art=el.closest('.stop');if(art)art.classList.toggle('open',!!S.open[id]);}
+  else if(act==='skip'){kvSet('skip:'+id,kb('skip:'+id)?0:1);renderPlan();}
+  else if(act==='delstop'){var cur=kv('stop:'+id);if(cur){cur=copy(cur);cur.del=1;kvSet('stop:'+id,cur);toast('Removed for everyone');renderPlan();}}
+  else if(act==='openself'){el.classList.toggle('open');}
+  else if(act==='addstop'){showSheet({day:S.day});}
+  else if(act==='sheetclose'){hideSheet();}
+  else if(act==='sheetsearch'){
+    var qq=($('#sh-q').value||$('#sh-title').value||'').trim();
+    if(qq)window.open(mapUrl(qq+' Morocco'),'_blank');else toast('Type a place first');
+  }
+  else if(act==='sheetsave'){
+    var title=($('#sh-title').value||'').trim();
+    if(!title){toast('Give it a name');return;}
+    var obj={id:'c'+uid(),day:parseInt($('#sh-day').value,10),t:$('#sh-time').value||'',title:title,q:($('#sh-q').value||'').trim(),tag:$('#sh-tag').value,who:$('#sh-who').value,note:($('#sh-note').value||'').trim()};
+    kvSet('stop:'+obj.id,obj);
+    S.day=obj.day;hideSheet();showTab('plan');toast('Added to the plan');
+  }
+  else if(act==='pcity'){S.city=el.getAttribute('data-c');LS.set('city',S.city);S.pq=($('#pq')||{}).value||S.pq;renderPlaces();}
+  else if(act==='pcat'){var c=el.getAttribute('data-c');S.cat=S.cat===c?'':c;S.pq=($('#pq')||{}).value||'';renderPlaces();}
+  else if(act==='psearch'){
+    S.pq=(($('#pq')||{}).value||'').trim();
+    S.embed=((S.pq+' '+S.cat+' '+S.city).replace(/\s+/g,' ').trim())+' Morocco';
+    renderPlaces();
+  }
+  else if(act==='addplace'){
+    var n=($('#ap-n').value||'').trim();
+    if(!n){toast('Add a name first');return;}
+    var pid='p'+uid();
+    kvSet('place:'+pid,{id:pid,n:n,c:$('#ap-c').value,t:($('#ap-t').value||'').trim(),u:($('#ap-u').value||'').trim()});
+    toast('Saved for everyone');renderPlaces();
+  }
+  else if(act==='saveidea'){
+    var idea=IDEAS.filter(function(i){return i.id===id;})[0];
+    if(idea){kvSet('place:'+idea.id,{id:idea.id,n:idea.n,c:idea.c,t:idea.t,u:mapUrl(idea.q)});toast('Saved for everyone');renderPlaces();}
+  }
+  else if(act==='delplace'){var pv=kv('place:'+id);if(pv){pv=copy(pv);pv.del=1;kvSet('place:'+id,pv);toast('Removed for everyone');renderPlaces();}}
+  else if(act==='vote'){kvSet('vote:'+id+':'+me(),kb('vote:'+id+':'+me())?0:1);renderPlaces();}
+  else if(act==='toplan'){var pp=kv('place:'+id);if(pp)showSheet({title:pp.n,q:pp.n+' '+pp.c,note:pp.t||''});}
+  else if(act==='tick'){
+    var k=el.getAttribute('data-k');
+    kvSet(k,kb(k)?0:(el.getAttribute('data-stamp')==='1'?Date.now():1));
+    renderTab(S.tab);
+  }
+  else if(act==='say'){
+    var ph=PHRASES[parseInt(el.getAttribute('data-i'),10)];
+    try{if(window.speechSynthesis){window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(ph[2]);u.lang='fr-FR';u.rate=.9;window.speechSynthesis.speak(u);}}catch(err){}
+  }
+  else if(act==='ratereset'){S.rates=copy(RATES_DEF);LS.set('rates',S.rates);renderMoney();}
+  else if(act==='who'){showWho();}
+  else if(act==='whoclose'){hideWho();}
+  else if(act==='pick'){
+    S.me=el.getAttribute('data-me');LS.set('me',S.me);S.last=null;
+    pickToday();hideWho();renderHero();showTab('plan');
+  }
+  else if(act==='chatsend'){sendChat(($('#chatIn')||{}).value);}
+  else if(act==='quick'){sendChat(QUICK[parseInt(el.getAttribute('data-i'),10)]);}
+  else if(act==='chatsave'){
+    var m=S.chat[parseInt(el.getAttribute('data-m'),10)];
+    if(m){var f=fmtMsg(m.t),pl=f.places[parseInt(el.getAttribute('data-p'),10)];
+      if(pl){var id2='p'+uid();kvSet('place:'+id2,{id:id2,n:pl.n,c:CITIES.indexOf(pl.c)>-1?pl.c:S.city,t:pl.t});toast('Saved for everyone');el.disabled=true;}}
+  }
+});
+
+document.addEventListener('keydown',function(e){
+  if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('check')){e.preventDefault();e.target.click();}
+  else if(e.key==='Enter'&&e.target.id==='chatIn'){e.preventDefault();sendChat(e.target.value);}
+  else if(e.key==='Enter'&&e.target.id==='pq'){e.preventDefault();var b=$('[data-act="psearch"]');if(b)b.click();}
+});
+
+document.addEventListener('change',function(e){
+  var t=e.target;
+  if(t.classList&&t.classList.contains('tin')){
+    var id=t.getAttribute('data-id');
+    if(t.value)kvSet('time:'+id,t.value);
+    var tv=t.parentNode.querySelector('.tv');if(tv)tv.textContent=t.value||'Set time';
+  }
+});
+
+var noteTimer=null;
+document.addEventListener('input',function(e){
+  var t=e.target;
+  if(t.hasAttribute&&t.hasAttribute('data-cv')){
+    var code=t.getAttribute('data-cv'),v=parseNum(t.value);
+    S.last={code:code,val:v};convertFrom(code,v);
+  }else if(t.hasAttribute&&t.hasAttribute('data-rate')){
+    var rc=t.getAttribute('data-rate'),rv=parseNum(t.value);
+    if(isFinite(rv)&&rv>0){S.rates[rc]=rv;LS.set('rates',S.rates);quadTable();var l=S.last||CURSTART[fl()];convertFrom(l.code,l.val);}
+  }else if(t.id==='notes'){
+    clearTimeout(noteTimer);var val=t.value;noteTimer=setTimeout(function(){kvSet('note:'+me(),val);},700);
+  }else if(t.hasAttribute&&t.hasAttribute('data-cf')){
+    var f=t.getAttribute('data-cf'),val2=t.value;
+    clearTimeout(noteTimer);noteTimer=setTimeout(function(){kvSet('carf:'+f,val2);},700);
+  }
+});
+
+document.addEventListener('focusin',function(e){
+  var t=e.target;
+  if(t.hasAttribute&&(t.hasAttribute('data-cv')||t.hasAttribute('data-rate'))){setTimeout(function(){try{t.select();}catch(x){}},0);}
+  if(t.matches&&t.matches('input:not([type=checkbox]),textarea,select'))typing=true;
+});
+document.addEventListener('focusout',function(){
+  typing=false;
+  if(pendingRender){setTimeout(function(){if(!typing&&pendingRender){pendingRender=false;refresh();}},250);}
+});
+
+/* ================= start ================= */
+pickToday();
+if(!PEOPLE[S.me])S.me=null;
+renderHero();
+showTab('plan');
+setStatus(null);
+if(!S.me)showWho();
+setInterval(tickHeader,30000);
+if(synced()){
+  pull();flush();
+  setInterval(function(){if(!document.hidden)pull();},5000);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden){pull();flush();}});
+  window.addEventListener('online',function(){pull();flush();});
+}
+})();
+
+</script>
+</body>
+</html>
